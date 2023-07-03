@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*header {
+    background: url('img/produkty.jpg');
+    background-size: cover;
+    height: 150vh;
+    background-attachment: fixed;
+    background-color: gray;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat
+
+}*/
+
+.navbar-menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: burlywood;
+    align-items: center;
+    color: white;
+}
+
+.brand-logo {
+    margin-left: 15px;
+    font-size: 40px;
+    color: chocolate;
+}
+
+.navbar-menu ul {
+    display: flex;
+    padding-right: 20px;
+}
+
+.navbar-menu li {
+    list-style: none;
+}
+
+.navbar-menu li:hover {
+    text-decoration: underline;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+    font-size: 20px;
+}
+
+.navbar-menu a:hover {
+    color: chocolate;
+}
+
+.material-symbols-outlined {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    padding-right: 15px;
+}
