@@ -49,16 +49,10 @@
     padding: 15px;
     display: block;
     font-size: 20px;
+    
 }
 
 .navbar-menu a:hover {
     color: chocolate;
 }
 
-.material-symbols-outlined {
-    background: none;
-    outline: none;
-    border: none;
-    color: white;
-    padding-right: 15px;
-}
