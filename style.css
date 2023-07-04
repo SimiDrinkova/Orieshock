@@ -5,7 +5,12 @@
     scroll-behavior: smooth;
 }
 
-/*header {
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+header {
     background: url('img/produkty.jpg');
     background-size: cover;
     height: 150vh;
@@ -13,34 +18,31 @@
     background-color: gray;
     background-blend-mode: multiply;
     background-repeat: no-repeat
+}
 
-}*/
-
-.navbar-menu {
+ /**** Navigation menu ****/
+.navbar-menu  {
     display: flex;
     justify-content: space-between;
-    background-color: burlywood;
+    background-color: transparent;
     align-items: center;
-    color: white;
 }
 
 .brand-logo {
-    margin-left: 15px;
     font-size: 40px;
     color: chocolate;
+    margin-right: auto;
 }
 
 .navbar-menu ul {
     display: flex;
-    padding-right: 20px;
+    justify-content: center;
+    
 }
 
 .navbar-menu li {
     list-style: none;
-}
-
-.navbar-menu li:hover {
-    text-decoration: underline;
+    margin: 0 10px;
 }
 
 .navbar-menu a {
@@ -48,7 +50,7 @@
     color: white;
     padding: 15px;
     display: block;
-    font-size: 20px;
+    font-size: 23px;
     
 }
 
