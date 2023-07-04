@@ -81,11 +81,17 @@ header {
 /*** About us ***/
 
 .about-us h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.about-us h2::after {
+    content: '';
+    display: block;
+    width: 200px;
+    border-bottom: 1px solid chocolate ;
+    margin: 15px auto;
 }
 
 .about-us img {
@@ -99,9 +105,40 @@ header {
 /*** Production ***/
 
 .production h2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
     }
+
+.production h2::after {
+    content: '';
+    display: block;
+    width: 200px;
+    border-bottom: 1px solid chocolate ;
+    margin: 15px auto;
+}    
+
+
+/*** Products ***/
+
+.products h2{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.products h2::after {
+    content: '';
+    display: block;
+    width: 200px;
+    border-bottom: 1px solid chocolate ;
+    margin: 15px auto;
+}
+
+.products img {
+    max-width: 100%;
+}
+
+.products p {
+    text-align: center;
+}
