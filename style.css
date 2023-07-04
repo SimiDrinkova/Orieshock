@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+h2 {
+    color: chocolate;
+}
+
+p {
+    color: #565656;
+    font-size: 18px;
 }
 
 .row {
@@ -32,6 +42,8 @@ header {
     font-size: 40px;
     color: chocolate;
     margin-right: auto;
+    margin-top: 20px;
+
 }
 
 .navbar-menu ul {
@@ -56,5 +68,23 @@ header {
 
 .navbar-menu a:hover {
     color: chocolate;
+}
+
+/*** About us ***/
+
+.about-us h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-us img {
+    max-width: 100%;
+}
+
+.about-us p {
+    text-align: center
 }
 
