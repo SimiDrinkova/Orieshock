@@ -190,8 +190,7 @@ header {
 }
 
 
-/*** Contacts us ***/ 
-
+/*** Contact ***/ 
 
 .contacts h2 {
     text-align: center;
@@ -211,6 +210,11 @@ header {
     width: 100%;
 }
 
+.contacts p {
+    text-align: center;
+    color: #565656;
+}
+
 .contacts a {
     text-align: center;
 }
@@ -221,6 +225,48 @@ header {
     width: 100px;
     text-align: center;
 }
+
+.mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.mail a {
+    text-decoration: none;
+    color: #565656;
+    margin-left: 10px;
+}
+
+.mail a:hover {
+    color: chocolate;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone a {
+    text-decoration: none;
+    color: #565656;
+    margin-left: 10px;
+}
+
+.phone a:hover {
+    color: chocolate;
+}
+
+.social-media {
+    display: flex;
+    margin-left: 30px;
+}
+
+
+
 
 
 
