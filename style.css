@@ -52,6 +52,7 @@ header {
 
 .brand-logo img {
     margin-top: 20px;
+    width: 100%;
 }
 
 .navbar-menu ul {
@@ -187,3 +188,87 @@ header {
     display: flex;
     padding-top: 70px;
 }
+
+
+/*** Contact ***/ 
+
+.contacts h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contacts h2::after {
+    content: '';
+    display: block;
+    width: 270px;
+    border-bottom: 1px solid chocolate ;
+    margin: 15px auto;
+}
+
+.contacts img {
+    width: 100%;
+}
+
+.contacts p {
+    text-align: center;
+    color: #565656;
+}
+
+.contacts a {
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    text-align: center;
+}
+
+.mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.mail a {
+    text-decoration: none;
+    color: #565656;
+    margin-left: 10px;
+}
+
+.mail a:hover {
+    color: chocolate;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone a {
+    text-decoration: none;
+    color: #565656;
+    margin-left: 10px;
+}
+
+.phone a:hover {
+    color: chocolate;
+}
+
+.social-media {
+    display: flex;
+    margin-left: 30px;
+}
+
+
+
+
+
+
+
+
