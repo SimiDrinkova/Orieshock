@@ -6,6 +6,7 @@
     font-family: 'Playfair Display', sans-serif;
 }
 
+
 h2 {
     color: chocolate;
     text-transform: uppercase;
@@ -265,10 +266,30 @@ header {
     margin-left: 30px;
 }
 
+.my_bttn{
+    height: 55px;
+    width: 55px;
+    background-color: chocolate;
+    border: none;
+    color: white;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+    display: none;
+    margin-right: 20px;
+}
 
+.my_bttn:hover{
+    transform: scale(1.05) 
+               translateY(-5px);
+}
 
-
-
-
+.my_bttn .fa-arrow-up {
+    font-size: 25px;
+}
+  
 
 
