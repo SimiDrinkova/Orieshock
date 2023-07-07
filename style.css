@@ -12,6 +12,11 @@ h2 {
     text-transform: uppercase;
 }
 
+h3 {
+    color: chocolate;
+    text-align: center;
+}
+
 p {
     color: #565656;
     font-size: 18px;
@@ -143,8 +148,39 @@ header {
 
 .products p {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
+
+.order {
+    font-size: 15px;
+    padding: 5px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 80px;
+    height: 35px;
+    font-family: 'Playfair Display', sans-serif;
+    background-color: white;
+    outline: none;
+    border: 1px solid chocolate;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.products a {
+    text-decoration: none;
+}
+
+.order:hover {
+    background-color: chocolate;
+    color: white;
+    border: 1px solid white;
+}
+
+
 
 /***Reviews ***/
 
