@@ -186,7 +186,8 @@ header {
 
 .reviews {
     background: fixed;
-    background-color:burlywood;
+    background-color:white;
+    border: 1px solid chocolate;
     padding-top: 5px;
     margin-top: 20px;
     padding-bottom: 5px;
@@ -231,10 +232,14 @@ header {
 
 /*** Contact ***/ 
 
+.contacts {
+    background-color:burlywood;
+}
+
 .contacts h2 {
     text-align: center;
-    margin-top: 20px;
     margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 .contacts h2::after {
@@ -298,6 +303,7 @@ header {
 .phone a:hover {
     color: chocolate;
 }
+
 
 .social-media {
     display: flex;
