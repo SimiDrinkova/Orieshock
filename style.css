@@ -250,9 +250,6 @@ header {
     margin: 15px auto;
 }
 
-.contacts img {
-    width: 100%;
-}
 
 .contacts p {
     text-align: center;
@@ -261,13 +258,7 @@ header {
 
 .contacts a {
     text-align: center;
-}
-
-.social-media {
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
-    text-align: center;
+    font-size: 20px;
 }
 
 .mail {
@@ -304,11 +295,33 @@ header {
     color: chocolate;
 }
 
+.mail-phone::after {
+    content: '';
+    display: block;
+    width: 270px;
+    border-bottom: 1px solid chocolate ;
+    margin: 15px auto;
+}
 
 .social-media {
     display: flex;
-    margin-left: 30px;
-}
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-media a {
+    width: 5%;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .company-copy {
+    text-align: center;
+    background-color: chocolate;
+    padding: 10px;
+  }
+
+
 
 /* Scroll to Top*/
 .my_bttn{

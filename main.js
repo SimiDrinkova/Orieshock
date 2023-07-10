@@ -53,6 +53,7 @@ document.querySelector(".my_bttn").addEventListener("click", function (e) {
 });
 
 // @ts-ignore
+// scroll button
 window.addEventListener("scroll", function () {
   const scrollTopButton = document.querySelector(".my_bttn");
   const scrollThreshold = 400; //Hranica posunu v pixeloch
