@@ -85,6 +85,47 @@ header {
     color: chocolate;
 }
 
+/*** Animated Arrows ***/
+.animated-arrows {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.animated-arrows span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: scroll 2s infinite;
+}
+
+.arrow-span:nth-child(2) {
+    animation-delay: -.2s;
+}
+
+.arrow-span:nth-child(3) {
+    animation-delay: -.4s;
+}
+
+@keyframes scroll {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
 /*** About us ***/
 
 .about-us h2 {
@@ -320,8 +361,6 @@ header {
     background-color: chocolate;
     padding: 10px;
   }
-
-
 
 /* Scroll to Top*/
 .my_bttn{
