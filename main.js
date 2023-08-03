@@ -63,3 +63,61 @@ window.addEventListener("scroll", function () {
     scrollTopButton.style.display = "none";
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const imageContainers = document.querySelectorAll(".image-container");
+
+  imageContainers.forEach((container) => {
+    const img = container.querySelector("img");
+    const nutritionOverlay = container.querySelector(".nutrition-overlay");
+    const value = img.getAttribute("data-nutritional-value");
+    const calories = img.getAttribute("data-calories");
+    const protein = img.getAttribute("data-protein");
+    const fat = img.getAttribute("data-fat");
+    const carbs = img.getAttribute("data-carbs");
+    const fibre = img.getAttribute("data-fibre");
+
+    nutritionOverlay.innerHTML = `
+      <p>Výživové údaje: na 100 g<p/>
+      <p>Kalórie: ${calories} kcal</p>
+      <p>Proteíny: ${protein}</p>
+      <p>Tuky: ${fat}</p>
+      <p>Sacharidy: ${carbs}</p>
+      <p>Vláknina: ${fibre}</p>
+    `;
+
+    container.addEventListener("mouseover", function () {
+      nutritionOverlay.style.opacity = 1;
+      nutritionOverlay.style.visibility = "visible";
+    });
+
+    container.addEventListener("mouseout", function () {
+      nutritionOverlay.style.opacity = 0;
+      nutritionOverlay.style.visibility = "hidden";
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const showNutritionalValuesButton = document.querySelector(
+    ".show-nutritional-values"
+  );
+  const closeNutritionalValuesButton = document.querySelector(
+    ".close-nutritional-values"
+  );
+  const nutritionalValues = document.querySelector(".nutritional-values");
+
+  showNutritionalValuesButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    nutritionalValues.style.transform = "rotateX(0)";
+    nutritionalValues.style.visibility = "visible";
+    nutritionalValues.style.opacity = "1";
+  });
+
+  closeNutritionalValuesButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    nutritionalValues.style.transform = "rotateX(-180deg)";
+    nutritionalValues.style.visibility = "hidden";
+    nutritionalValues.style.opacity = "0";
+  });
+});
