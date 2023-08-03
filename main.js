@@ -102,22 +102,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const showNutritionalValuesButton = document.querySelector(
     ".show-nutritional-values"
   );
-  const closeNutritionalValuesButton = document.querySelector(
-    ".close-nutritional-values"
-  );
   const nutritionalValues = document.querySelector(".nutritional-values");
+  const product = document.querySelector(".rotate");
+  const productImage = product.querySelector("img");
+
+  productImage.addEventListener("mouseover", function () {
+    productImage.style.transform = "scale(1.1)";
+  });
 
   showNutritionalValuesButton.addEventListener("click", function (event) {
     event.preventDefault();
     nutritionalValues.style.transform = "rotateX(0)";
     nutritionalValues.style.visibility = "visible";
     nutritionalValues.style.opacity = "1";
+    showNutritionalValuesButton.style.visibility = "hidden"; // Skryjeme tlačítko
+    productImage.style.transform = "rotateY(180deg)"; // Přidáme rotaci obrázku po kliknutí
   });
 
-  closeNutritionalValuesButton.addEventListener("click", function (event) {
-    event.preventDefault();
+  product.addEventListener("mouseleave", function () {
+    // Po opuštění oblasti produktu obnovíme původní stav
     nutritionalValues.style.transform = "rotateX(-180deg)";
     nutritionalValues.style.visibility = "hidden";
     nutritionalValues.style.opacity = "0";
+    showNutritionalValuesButton.style.visibility = "visible"; // Znovu zobrazíme tlačítko
+    productImage.style.transform = "rotateY(0)"; // Vrátíme obrázek do původní polohy
   });
 });
