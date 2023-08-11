@@ -204,6 +204,7 @@ header {
   
   .image-container img {
     transition: transform 0.3s ease;
+    cursor: pointer;
   }
   
   .nutrition-overlay {
@@ -225,12 +226,22 @@ header {
     flex-direction: column;
     padding: 10px;
     transition: bottom 0.5s ease;
+    cursor: pointer;
+  }
+
+  .nutrition-overlay h3.overlay-title {
+    font-size: 24px; /* Prispôsobte veľkosť písma podľa potreby */
+    font-weight: bold; /* Tučné písmo */
+    margin-bottom: 50px; /* Odsadenie medzi nadpisom a zvyškom obsahu */
   }
   
   .nutrition-overlay p {
+    text-align: center;
     margin: 0px 0;
     color: white;
     font-size: 15px;
+    word-break: keep-all;
+    line-height: 1.8;
   }
   
   .image-container:hover img {
@@ -284,9 +295,22 @@ h4 {
 
 
 
+/*VARIANTA 2*/
+
   .nutrition-title{
     /* Zabraňuje rotaci textu */
     transform: rotateX(-180deg);
+    text-align: center;
+    color: chocolate;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nutritional-values h3.overlay-title {
+    font-size: 24px; /* Prispôsobte veľkosť písma podľa potreby */
+    font-weight: bold; /* Tučné písmo */
+    margin-bottom: 25px; /* Odsadenie medzi nadpisom a zvyškom obsahu */
+    margin-top: 20px;
   }
   
   .image-container .show-nutritional-values {
@@ -313,14 +337,16 @@ h4 {
   .nutritional-values {
     /* CSS pro skrytí hodnot - rozdíl je zde */
     position: absolute;
+    bottom: -100%;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     text-align: center;
+    line-height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     transform-origin: bottom;
     transform: rotateX(-180deg);
     visibility: hidden;
@@ -331,22 +357,18 @@ h4 {
   }
 
   .nutritional-values p {
-    margin: 5px 0; /* Odsazení mezi jednotlivými hodnotami */
-    padding-top: 10px;
-    color: white;
-    font-size: 16px;
     text-align: center;
+    margin: 0px 0;
+    color: white;
+    font-size: 15px;
+    word-break:keep-all;
+    line-height: 1.8;
   }
 
   .nutritional-values .nutrition-title {
     font-size: 24px; /* Velikost písma pro nadpis výživových hodnot */
     font-weight: bold; /* Tučné písmo pro nadpis */
-    margin-bottom: 10px; /* Odsazení mezi nadpisem a jednotlivými hodnotami */
-    padding-bottom: 10px;
-  }
-
-  .nutrition-title {
-    padding-bottom: 50px;
+    margin-bottom: 50px; /* Odsazení mezi nadpisem a jednotlivými hodnotami */
   }
   
   .show-nutritional-values {
@@ -357,6 +379,7 @@ h4 {
   
   .image-container .nutritional-values p {
     margin: 10px;
+    padding: 10px;
   }
   
   .show-nutritional-values:checked + .nutritional-values {

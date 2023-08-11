@@ -76,14 +76,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const fat = img.getAttribute("data-fat");
     const carbs = img.getAttribute("data-carbs");
     const fibre = img.getAttribute("data-fibre");
+    const info = img.getAttribute("data-info");
 
     nutritionOverlay.innerHTML = `
-      <p>Výživové údaje: na 100 g<p/>
-      <p>Kalórie: ${calories} kcal</p>
-      <p>Proteíny: ${protein}</p>
-      <p>Tuky: ${fat}</p>
-      <p>Sacharidy: ${carbs}</p>
-      <p>Vláknina: ${fibre}</p>
+      <h3 class="overlay-title">Orieshock Mandlový</h3>
+      <br>
+      <p>${info}</p>
     `;
 
     container.addEventListener("mouseover", function () {
