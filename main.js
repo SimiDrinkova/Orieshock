@@ -70,20 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
   imageContainers.forEach((container) => {
     const img = container.querySelector("img");
     const nutritionOverlay = container.querySelector(".nutrition-overlay");
-    const value = img.getAttribute("data-nutritional-value");
-    const calories = img.getAttribute("data-calories");
-    const protein = img.getAttribute("data-protein");
-    const fat = img.getAttribute("data-fat");
-    const carbs = img.getAttribute("data-carbs");
-    const fibre = img.getAttribute("data-fibre");
+    const info = img.getAttribute("data-info");
+    const overlayTitle = img.getAttribute("data-overlay-title");
 
     nutritionOverlay.innerHTML = `
-      <p>Výživové údaje: na 100 g<p/>
-      <p>Kalórie: ${calories} kcal</p>
-      <p>Proteíny: ${protein}</p>
-      <p>Tuky: ${fat}</p>
-      <p>Sacharidy: ${carbs}</p>
-      <p>Vláknina: ${fibre}</p>
+      <h3 class="overlay-title">${overlayTitle}</h3>
+      <br>
+      <p>${info}</p>
     `;
 
     container.addEventListener("mouseover", function () {
@@ -95,36 +88,5 @@ document.addEventListener("DOMContentLoaded", function () {
       nutritionOverlay.style.opacity = 0;
       nutritionOverlay.style.visibility = "hidden";
     });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const showNutritionalValuesButton = document.querySelector(
-    ".show-nutritional-values"
-  );
-  const nutritionalValues = document.querySelector(".nutritional-values");
-  const product = document.querySelector(".rotate");
-  const productImage = product.querySelector("img");
-
-  productImage.addEventListener("mouseover", function () {
-    productImage.style.transform = "scale(1.1)";
-  });
-
-  showNutritionalValuesButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    nutritionalValues.style.transform = "rotateX(0)";
-    nutritionalValues.style.visibility = "visible";
-    nutritionalValues.style.opacity = "1";
-    showNutritionalValuesButton.style.visibility = "hidden"; // Skryjeme tlačítko
-    productImage.style.transform = "rotateY(180deg)"; // Přidáme rotaci obrázku po kliknutí
-  });
-
-  product.addEventListener("mouseleave", function () {
-    // Po opuštění oblasti produktu obnovíme původní stav
-    nutritionalValues.style.transform = "rotateX(-180deg)";
-    nutritionalValues.style.visibility = "hidden";
-    nutritionalValues.style.opacity = "0";
-    showNutritionalValuesButton.style.visibility = "visible"; // Znovu zobrazíme tlačítko
-    productImage.style.transform = "rotateY(0)"; // Vrátíme obrázek do původní polohy
   });
 });

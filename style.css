@@ -204,6 +204,8 @@ header {
   
   .image-container img {
     transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: -1;
   }
   
   .nutrition-overlay {
@@ -212,7 +214,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
     line-height: 100%;
@@ -225,12 +227,26 @@ header {
     flex-direction: column;
     padding: 10px;
     transition: bottom 0.5s ease;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .nutrition-overlay h3.overlay-title {
+    font-size: 24px; /* Prispôsobte veľkosť písma podľa potreby */
+    font-weight: bold; /* Tučné písmo */
+    margin-bottom: 30px; /* Odsadenie medzi nadpisom a zvyškom obsahu */
+    z-index: 1;
+    line-height: 28px;
   }
   
   .nutrition-overlay p {
+    text-align: center;
     margin: 0px 0;
     color: white;
     font-size: 15px;
+    word-break: keep-all;
+    line-height: 1.8;
+    z-index: 1;
   }
   
   .image-container:hover img {
@@ -242,6 +258,7 @@ header {
     bottom: 0;
     opacity: 1;
     visibility: visible;
+    z-index: 1;
   }
 
 .products p {
@@ -282,90 +299,37 @@ h4 {
     border: 1px solid white;
 }
 
+.products .col.product {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
+.products .col.product:hover {
+    transform: translateY(-5px);
+}
 
-  .nutrition-title{
-    /* Zabraňuje rotaci textu */
-    transform: rotateX(-180deg);
-  }
-  
-  .image-container .show-nutritional-values {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 14px;
-    border: none;
+.products h3 {
+    margin-top: 10px;
+}
+
+.products h4 {
+    margin-bottom: 10px;
+}
+
+.products .image-container img {
+    max-width: 100%;
+    transition: transform 0.3s ease;
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-  
-  .image-container:hover .show-nutritional-values {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .nutritional-values {
-    /* CSS pro skrytí hodnot - rozdíl je zde */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 16px;
-    transform-origin: bottom;
-    transform: rotateX(-180deg);
-    visibility: hidden;
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.3s ease;
-      /* Další styly pro výživové hodnoty */
-      padding-top: 20px;
-  }
+}
 
-  .nutritional-values p {
-    margin: 5px 0; /* Odsazení mezi jednotlivými hodnotami */
-    padding-top: 10px;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .nutritional-values .nutrition-title {
-    font-size: 24px; /* Velikost písma pro nadpis výživových hodnot */
-    font-weight: bold; /* Tučné písmo pro nadpis */
-    margin-bottom: 10px; /* Odsazení mezi nadpisem a jednotlivými hodnotami */
-    padding-bottom: 10px;
-  }
-
-  .nutrition-title {
-    padding-bottom: 50px;
-  }
-  
-  .show-nutritional-values {
-    z-index: 1;
-    border: 1px solid white;
-    border-radius: 8px;
-  }
-  
-  .image-container .nutritional-values p {
-    margin: 10px;
-  }
-  
-  .show-nutritional-values:checked + .nutritional-values {
-    /* CSS pro zobrazení hodnot po kliknutí na tlačítko */
-    transform: rotateX(180deg);
-    visibility: visible;
-    opacity: 1;
-  }
-
+.products .image-container:hover img {
+    transform: scale(1.05);
+}
 
 
 /***Reviews ***/
