@@ -70,16 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
   imageContainers.forEach((container) => {
     const img = container.querySelector("img");
     const nutritionOverlay = container.querySelector(".nutrition-overlay");
-    const value = img.getAttribute("data-nutritional-value");
-    const calories = img.getAttribute("data-calories");
-    const protein = img.getAttribute("data-protein");
-    const fat = img.getAttribute("data-fat");
-    const carbs = img.getAttribute("data-carbs");
-    const fibre = img.getAttribute("data-fibre");
     const info = img.getAttribute("data-info");
+    const overlayTitle = img.getAttribute("data-overlay-title");
 
     nutritionOverlay.innerHTML = `
-      <h3 class="overlay-title">Orieshock Mandlový</h3>
+      <h3 class="overlay-title">${overlayTitle}</h3>
       <br>
       <p>${info}</p>
     `;
