@@ -232,7 +232,9 @@ header {
   .nutrition-overlay h3.overlay-title {
     font-size: 24px; /* Prispôsobte veľkosť písma podľa potreby */
     font-weight: bold; /* Tučné písmo */
-    margin-bottom: 50px; /* Odsadenie medzi nadpisom a zvyškom obsahu */
+    margin-bottom: 30px; /* Odsadenie medzi nadpisom a zvyškom obsahu */
+    z-index: 1;
+    line-height: 28px;
   }
   
   .nutrition-overlay p {
@@ -242,6 +244,7 @@ header {
     font-size: 15px;
     word-break: keep-all;
     line-height: 1.8;
+    z-index: 1;
   }
   
   .image-container:hover img {
