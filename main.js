@@ -72,11 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const nutritionOverlay = container.querySelector(".nutrition-overlay");
     const info = img.getAttribute("data-info");
     const overlayTitle = img.getAttribute("data-overlay-title");
+    const weight = img.getAttribute("data-weight");
 
     nutritionOverlay.innerHTML = `
       <h3 class="overlay-title">${overlayTitle}</h3>
       <br>
       <p>${info}</p>
+      <p>${weight}</p>
     `;
 
     container.addEventListener("mouseover", function () {
