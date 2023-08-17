@@ -3,24 +3,30 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'DIN PRO LIGHT';
+}
+
+body {
+    background-color: #FED9B0;
 }
 
 
 h2 {
-    color: chocolate;
+    color: #A97C50;
     text-transform: uppercase;
+    font-family: 'DIN PRO LIGHT';
 }
 
 h3 {
-    color: chocolate;
+    color: #A97C50;
     text-align: center;
+    font-family: 'DIN PRO LIGHT';
 }
 
 p {
-    color: #565656;
+    color: #603913;
     font-size: 18px;
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'DIN PRO LIGHT';
 }
 
 .row {
@@ -75,7 +81,7 @@ header {
 
 .navbar-menu a {
     text-decoration: none;
-    color: white;
+    color: #A97C50;
     padding: 15px;
     display: block;
     font-size: 23px;
@@ -83,7 +89,7 @@ header {
 }
 
 .navbar-menu a:hover {
-    color: chocolate;
+    color: #603913;
 }
 
 /*** Animated Arrows ***/
@@ -139,7 +145,7 @@ header {
     content: '';
     display: block;
     width: 200px;
-    border-bottom: 1px solid chocolate ;
+    border-bottom: 1px solid #A97C50 ;
     margin: 15px auto;
 }
 
@@ -163,7 +169,7 @@ header {
     content: '';
     display: block;
     width: 200px;
-    border-bottom: 1px solid chocolate ;
+    border-bottom: 1px solid #A97C50;
     margin: 15px auto;
 }    
 
@@ -180,7 +186,7 @@ header {
     content: '';
     display: block;
     width: 200px;
-    border-bottom: 1px solid chocolate ;
+    border-bottom: 1px solid #A97C50;
     margin: 15px auto;
 }
 
@@ -214,9 +220,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    text-align: center;
+    background-color: rgba(211, 170, 125, 0.9);
     line-height: 100%;
     font-size: 18px;
     opacity: 0;
@@ -228,21 +232,22 @@ header {
     padding: 10px;
     transition: bottom 0.5s ease;
     cursor: pointer;
-    z-index: 1;
+    z-index: -1;
   }
 
   .nutrition-overlay h3.overlay-title {
     font-size: 24px; /* Prispôsobte veľkosť písma podľa potreby */
     font-weight: bold; /* Tučné písmo */
-    margin-bottom: 30px; /* Odsadenie medzi nadpisom a zvyškom obsahu */
+     margin-top: 20px;/* Odsadenie medzi nadpisom a zvyškom obsahu */
     z-index: 1;
     line-height: 28px;
+    color: #603913
   }
   
   .nutrition-overlay p {
     text-align: center;
     margin: 0px 0;
-    color: white;
+    color:#603913;
     font-size: 15px;
     word-break: keep-all;
     line-height: 1.8;
@@ -274,19 +279,22 @@ h4 {
     font-size: 15px;
     padding: 5px;
     margin-bottom: 20px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     border-radius: 8px;
-    width: 80px;
+    width: 100px;
     height: 35px;
     font-family: 'Playfair Display', sans-serif;
     background-color: white;
     outline: none;
-    border: 1px solid chocolate;
+    border: 1px solid #D3AA7D;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
+    color: #603913
 }
 
 .products a {
@@ -294,7 +302,7 @@ h4 {
 }
 
 .order:hover {
-    background-color: chocolate;
+    background-color: #D3AA7D;
     color: white;
     border: 1px solid white;
 }
@@ -336,8 +344,8 @@ h4 {
 
 .reviews {
     background: fixed;
-    background-color:white;
-    border: 1px solid chocolate;
+    background-color:#FED9B0;
+    border: 1px solid #A97C50;
     padding-top: 5px;
     margin-top: 20px;
     padding-bottom: 5px;
@@ -353,7 +361,7 @@ h4 {
     content: '';
     display: block;
     width: 200px;
-    border-bottom: 1px solid chocolate ;
+    border-bottom: 1px solid #A97C50;
     margin: 15px auto;
 }
 
@@ -383,7 +391,7 @@ h4 {
 /*** Contact ***/ 
 
 .contacts {
-    background-color:burlywood;
+    background-color:#D3AA7D;
 }
 
 .contacts h2 {
@@ -396,7 +404,7 @@ h4 {
     content: '';
     display: block;
     width: 270px;
-    border-bottom: 1px solid chocolate ;
+    border-bottom: 1px solid #A97C50;
     margin: 15px auto;
 }
 
@@ -449,7 +457,7 @@ h4 {
     content: '';
     display: block;
     width: 270px;
-    border-bottom: 1px solid chocolate ;
+    border-bottom: 1px solid #A97C50;
     margin: 15px auto;
 }
 
@@ -467,7 +475,7 @@ h4 {
 
   .company-copy {
     text-align: center;
-    background-color: chocolate;
+    background-color: #A97C50;
     padding: 10px;
   }
 
