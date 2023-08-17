@@ -411,12 +411,16 @@ h4 {
 
 .contacts p {
     text-align: center;
-    color: #565656;
+    color: #603913;
+    font-family: 'DIN PRO LIGHT';
 }
 
 .contacts a {
     text-align: center;
     font-size: 20px;
+    margin: 5px;
+    color: #603913;
+    font-family: 'DIN PRO LIGHT';
 }
 
 .mail {
@@ -429,7 +433,7 @@ h4 {
 
 .mail a {
     text-decoration: none;
-    color: #565656;
+    color: #603913;
     margin-left: 10px;
 }
 
@@ -445,8 +449,12 @@ h4 {
 
 .phone a {
     text-decoration: none;
-    color: #565656;
-    margin-left: 10px;
+    color: #603913;
+    margin: 0 10px; /* Pridaný odsadený priestor medzi linkami */
+}
+
+.phone .material-symbols-outlined {
+    margin: 0 5px; /* Pridaný odsadený priestor medzi symbolmi a linkami */
 }
 
 .phone a:hover {
