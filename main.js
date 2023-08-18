@@ -9,10 +9,10 @@ document
   });
 
 document
-  .querySelector(".nav-item-production")
+  .querySelector(".nav-item-history")
   .addEventListener("click", function (e) {
     smoothScroll({
-      toElement: document.querySelector(".production"),
+      toElement: document.querySelector(".history"),
       duration: 500,
     });
   });
@@ -92,3 +92,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+const historiaSections = document.querySelectorAll(".roll");
+let currentIndex = 0;
+
+function showNextSection() {
+  if (currentIndex < historiaSections.length) {
+    historiaSections[currentIndex].classList.add("visible");
+    currentIndex++;
+    setTimeout(showNextSection, 500); // Zmena doby zobrazenia (ms)
+  }
+}
+
+// Zisti, či sme na sekcií "História"
+const historySection = document.querySelector(".history");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      showNextSection();
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+observer.observe(historySection);
