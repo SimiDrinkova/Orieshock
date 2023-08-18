@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #FED9B0;
+    background-color: rgba(254, 217, 176, 0.4);
 }
 
 
@@ -365,8 +365,6 @@ h4 {
 /***Reviews ***/
 
 .reviews {
-    background: fixed;
-    background-color:#FED9B0;
     border: 1px solid #A97C50;
     padding-top: 5px;
     margin-top: 20px;
@@ -385,28 +383,6 @@ h4 {
     width: 200px;
     border-bottom: 1px solid #A97C50;
     margin: 15px auto;
-}
-
-.photo-name img {
-    width: 25%;
-    border-radius: 50px;
-    float: left;
-    margin-top: 20px;
-    margin-right: 20px;
-}
-.reviews cite {
-    font-size: 18px;
-    color: #565656;
-}
-
-.reviews blockquote {
-    font-size: 18px;
-    color: #565656;
-}
-
-.reviews p {
-    display: flex;
-    padding-top: 70px;
 }
 
 
