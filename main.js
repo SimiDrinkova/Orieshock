@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Roll v history
 const historiaSections = document.querySelectorAll(".roll");
 let currentIndex = 0;
 
@@ -120,22 +121,49 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(historySection);
 
-const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
 
-function showSlide(index) {
-  slides.forEach((slide, idx) => {
-    slide.style.left = idx === index ? "0%" : "100%";
+  let currentSlideIndex = 0;
+
+  function startAutoSlide() {
+    setInterval(nextSlide, 8000); // Přepínání každých 8 sekund
+  }
+
+  startAutoSlide(); // Spustit automatické přepínání po načtení stránky
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.left = (i - index) * 100 + "%";
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.remove("active");
+    });
+
+    dots[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    showSlide(currentSlideIndex);
+  }
+
+  function prevSlide() {
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    showSlide(currentSlideIndex);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      currentSlideIndex = index;
+    });
   });
-}
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
+  document.querySelector(".prev-button").addEventListener("click", prevSlide);
+  document.querySelector(".next-button").addEventListener("click", nextSlide);
 
-// Spustit posuvník po načtení stránky
-window.addEventListener("load", () => {
-  showSlide(currentSlide);
-  setInterval(nextSlide, 5000); // Automatické posouvání každých 5 sekund
+  showSlide(currentSlideIndex);
 });

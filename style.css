@@ -96,6 +96,52 @@ header {
     color: #603913;
 }
 
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+        z-index: 1; /* Zajištění zobrazení nad snímky */
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.dot-container {
+    position: absolute;
+    bottom: 150px; /* Úprava dle vašeho designu */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    border: 1px solid #603913;
+    border-radius: 50px;
+    color: red;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    cursor: pointer
+}
+
+.dot.active {
+    background-color: #A97C50;
+    border-color: #603913;
+    color:rgba(0, 0, 0, 0.3); ;
+}
 
 .slider-container {
     width: 100%;
@@ -127,7 +173,7 @@ header {
 /*** Animated Arrows ***/
 .animated-arrows {
     position: absolute;
-    top: 90%;
+    top: 91%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
