@@ -56,11 +56,14 @@ document.querySelector(".my_bttn").addEventListener("click", function (e) {
 // scroll button
 window.addEventListener("scroll", function () {
   const scrollTopButton = document.querySelector(".my_bttn");
+  const scrollArrow = document.querySelector(".animated-arrows");
   const scrollThreshold = 400; //Hranica posunu v pixeloch
   if (window.pageYOffset > scrollThreshold) {
     scrollTopButton.style.display = "block";
+    scrollArrow.style.display = "none";
   } else {
     scrollTopButton.style.display = "none";
+    scrollArrow.style.display = "block";
   }
 });
 
@@ -116,3 +119,23 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 observer.observe(historySection);
+
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, idx) => {
+    slide.style.left = idx === index ? "0%" : "100%";
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Spustit posuvník po načtení stránky
+window.addEventListener("load", () => {
+  showSlide(currentSlide);
+  setInterval(nextSlide, 5000); // Automatické posouvání každých 5 sekund
+});
