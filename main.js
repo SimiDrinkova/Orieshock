@@ -35,6 +35,13 @@ document
     });
   });
 
+document.querySelector(".nav-item-buy").addEventListener("click", function (e) {
+  smoothScroll({
+    toElement: document.querySelector(".where-to-buy"),
+    duration: 700,
+  });
+});
+
 document
   .querySelector(".nav-item-contacts")
   .addEventListener("click", function (e) {

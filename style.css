@@ -12,13 +12,13 @@ body {
 
 
 h2 {
-    color: #A97C50;
+    color: #603913;
     text-transform: uppercase;
     font-family: 'DIN PRO LIGHT';
 }
 
 h3 {
-    color: #A97C50;
+    color: #603913;
     text-align: center;
     font-family: 'DIN PRO LIGHT';
 }
@@ -83,7 +83,7 @@ header {
 
 .navbar-menu a {
     text-decoration: none;
-    color: #A97C50;
+    color: #603913;
     padding: 10px 15px;
     display: block;
     font-size: 23px;
@@ -93,7 +93,7 @@ header {
 }
 
 .navbar-menu a:hover {
-    color: #603913;
+    color: #A97C50;
 }
 
 .prev-button,
@@ -116,31 +116,6 @@ header {
 
 .next-button {
     right: 10px;
-}
-
-.dot-container {
-    position: absolute;
-    bottom: 150px; /* Úprava dle vašeho designu */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-}
-
-.dot {
-    border: 1px solid #603913;
-    border-radius: 50px;
-    color: red;
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-    cursor: pointer
-}
-
-.dot.active {
-    background-color: #A97C50;
-    border-color: #603913;
-    color:rgba(0, 0, 0, 0.3); ;
 }
 
 .slider-container {
@@ -484,12 +459,62 @@ h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(img/400px.png);
+    background: url(img/6.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
 }
+
+/*** Where to buy ***/
+
+.where-to-buy {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: background-image 0.5s ease; /* Animácia zmeny pozadia */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px; /* Prispôsobte výšku podľa potreby */
+}
+
+.where-to-buy h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.where-to-buy h2::after {
+    content: '';
+    display: block;
+    width: 200px;
+    border-bottom: 1px solid #A97C50 ;
+    margin: 15px auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 30px;
+}
+
+.buy-button {
+    background-color: #A97C50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.buy-button:active {
+    background-color: #333; /* Zmení farbu tlačidla pri kliknutí */
+    color: white;
+}
+
+
 
 
 /*** Contact ***/ 
@@ -564,7 +589,7 @@ h4 {
     border: 1px solid #A97C50;
     color: #A97C50;
     position: fixed;
-    bottom: 30px;
+    bottom: 40px;
     right: 30px;
     border-radius: 25px;
     cursor: pointer;
