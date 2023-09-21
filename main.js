@@ -193,3 +193,29 @@ buttonEshop.addEventListener("click", function () {
 buttonBA.addEventListener("click", function () {
   backgroundLocality.style.backgroundImage = "url('img/bratislava.png')";
 });
+
+// JavaScript pro otevření/zavření mobilního menu
+
+const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+const navbarList = document.getElementById("navbar_list");
+const bar1 = document.querySelector(".mobile-menu-icon .bar:first-child");
+const bar2 = document.querySelector(".mobile-menu-icon .bar:nth-child(2)");
+const bar3 = document.querySelector(".mobile-menu-icon .bar:last-child");
+
+mobileMenuIcon.addEventListener("click", function () {
+  navbarList.classList.toggle("mobile-menu-open"); // Přepnout třídu 'mobile-menu-open'
+
+  // Zkontrolujte, zda má menu třídu 'mobile-menu-open' a podle toho nastavte zobrazení
+  if (navbarList.classList.contains("mobile-menu-open")) {
+    navbarList.style.display = "block";
+    bar1.style.transform = "rotate(-45deg) translate(-5px, 6px)";
+    bar2.style.opacity = 0;
+    bar3.style.transform = "rotate(45deg) translate(-5px, -6px)";
+  } else {
+    navbarList.style.display = "none";
+    // Pokud je mobilní menu zavřené, vrátit hamburger ikonu
+    bar1.style.transform = "none";
+    bar2.style.opacity = 1;
+    bar3.style.transform = "none";
+  }
+});

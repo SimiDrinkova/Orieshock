@@ -96,6 +96,33 @@ header {
     color: #A97C50;
 }
 
+
+.mobile-menu-icon {
+    display: none; /* Skrytí hamburger ikony na větších obrazovkách */
+    cursor: pointer;
+}
+
+.mobile-menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #603913;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.navbar-menu.active ul {
+    display: flex; /* Zobrazení navigačního menu po kliknutí na hamburger ikonu */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Výška hlavičky */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+
 .prev-button,
 .next-button {
     position: absolute;
@@ -494,6 +521,7 @@ h4 {
     border-bottom: 1px solid #A97C50 ;
     margin: 15px auto;
 }
+
 
 .buttons {
     display: flex;

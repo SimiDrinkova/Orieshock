@@ -1,0 +1,130 @@
+/* Styly pro mobilní zařízení */
+@media screen and (max-width: 768px) {
+    /* Upravit velikost písma a okraje pro nadpisy a odstavce */
+    .about-us h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .about p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Vytvoření sloupců, které se na menších obrazovkách zobrazují vertikálně */
+    .about .col {
+        width: 100%;
+    }
+
+    /* Středové zarovnání textu ve sloupcích */
+    .about .col span-1-of-2 {
+        text-align: center;
+    }
+
+    .history p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Vytvoření sloupců, které se na menších obrazovkách zobrazují vertikálně */
+    .history .col {
+        width: 100%;
+    }
+
+    /* Centrování textu ve sloupcích */
+    .history .col span-1-of-4 {
+        text-align: center;
+    }
+
+    .products .col {
+        width: 50%; /* Šírka stĺpca na celú šírku obrazovky */
+        margin-bottom: 20px; /* Odstup medzi stĺpcami */
+    }
+
+    .contact-form.row {
+        display: block;
+      }
+    
+      .col {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    
+      .social-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+    
+      /* Adjust font sizes or padding as needed for mobile readability */
+      .social-text {
+        font-size: 16px;
+      }
+    
+      /* You may want to adjust the size of social icons for mobile */
+      .social-logo {
+        width: 30px;
+        height: 30px;
+      }
+    
+      .phone-numbers {
+        margin-top: 10px;
+      }
+
+      .reviews {
+        text-align: center; /* Center align the content */
+    }
+
+    .background-image {
+        background-size: cover; /* Adjust background size as needed */
+        height: 200px; /* Adjust the height as needed */
+    }
+
+    .reviews h2 {
+        font-size: 15px; /* Adjust font size as needed */
+        margin-top: 5px; /* Adjust margin as needed */
+    }
+
+    .my_bttn {
+        display: none !important;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        padding-right: 10px;
+    }
+
+    #navbar_list {
+        display: none;
+        background-color: rgba(211, 170, 125, 0.5);
+        position: absolute;
+        top: 90px; /* Výška hlavičky */
+        right: 0;
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        border: 3px solid #603913;
+        border-radius: 10px;
+        padding: 5;
+
+      }
+      
+      #navbar_list li {
+        margin: 0;
+        padding: 0;
+      }
+      
+      #navbar_list a {
+        text-decoration: none;
+        color: #603913;
+        margin: 1px;
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid #603913!important; /* Přidáme oddělovací linku mezi položkami */
+      }
+      
+
+}
+
