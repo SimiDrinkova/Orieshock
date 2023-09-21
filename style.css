@@ -473,10 +473,12 @@ h4 {
     margin-top: 20px;
     margin-bottom: 20px;
     transition: background-image 0.5s ease; /* Animácia zmeny pozadia */
-    background-size: cover;
+    background: url(img/bratislava.png);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     height: 400px; /* Prispôsobte výšku podľa potreby */
+    width: 100%;
 }
 
 .where-to-buy h2 {
@@ -539,7 +541,7 @@ h4 {
 
 
 .social-logo {
-    width: 15%;
+    width: 12%;
 }
 
 .social-text {

@@ -31,14 +31,14 @@ document
   .addEventListener("click", function (e) {
     smoothScroll({
       toElement: document.querySelector(".reviews"),
-      duration: 700,
+      duration: 1000,
     });
   });
 
 document.querySelector(".nav-item-buy").addEventListener("click", function (e) {
   smoothScroll({
     toElement: document.querySelector(".where-to-buy"),
-    duration: 700,
+    duration: 1100,
   });
 });
 
@@ -47,14 +47,14 @@ document
   .addEventListener("click", function (e) {
     smoothScroll({
       toElement: document.querySelector(".contacts"),
-      duration: 800,
+      duration: 1100,
     });
   });
 
 document.querySelector(".my_bttn").addEventListener("click", function (e) {
   e.preventDefault();
   smoothScroll({
-    toElement: document.querySelector(".nav-item-about"),
+    toElement: document.querySelector(".main-header"),
     duration: 500,
   });
 });
@@ -173,4 +173,23 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".next-button").addEventListener("click", nextSlide);
 
   showSlide(currentSlideIndex);
+});
+
+// Change background of locality
+const buttonTT = document.querySelector("#btn-trnava");
+const buttonEshop = document.querySelector("#btn-eshop");
+const buttonBA = document.querySelector("#btn-bratislava");
+
+const backgroundLocality = document.querySelector(".where-to-buy");
+
+buttonTT.addEventListener("click", function () {
+  backgroundLocality.style.backgroundImage = "url('img/TT.png')";
+});
+
+buttonEshop.addEventListener("click", function () {
+  backgroundLocality.style.backgroundImage = "url('img/eshop.png')";
+});
+
+buttonBA.addEventListener("click", function () {
+  backgroundLocality.style.backgroundImage = "url('img/bratislava.png')";
 });
