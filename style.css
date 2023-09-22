@@ -499,6 +499,8 @@ h4 {
 }
 
 
+
+
 /*** Where to buy ***/
 
 .where-to-buy {
@@ -506,19 +508,19 @@ h4 {
     margin-top: 20px;
     margin-bottom: 20px;
     transition: background-image 0.5s ease; /* Animácia zmeny pozadia */
-    background: url(img/bratislava.png);
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 400px; /* Prispôsobte výšku podľa potreby */
+    min-height: 400px; /* Prispôsobte výšku podľa potreby */
     width: 100%;
-}
+    position: relative; /* Přidáme pozici relativní pro lightbox */
+  }
 
-.where-to-buy h2 {
+  .where-to-buy h2 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-}
+  }
 
 .where-to-buy h2::after {
     content: '';
@@ -528,12 +530,12 @@ h4 {
     margin: 15px auto;
 }
 
-
 .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Položky na malých obrazovkách se zalamují na další řádek */
+  justify-content: center;
+  gap: 10px; /* Snížení mezery mezi tlačítky */
+  margin-top: 30px;
 }
 
 .buy-button {
@@ -679,6 +681,7 @@ h4 {
     cursor: pointer;
     font-size: 30px;
 }
+
 
 
 

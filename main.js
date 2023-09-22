@@ -128,6 +128,7 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(historySection);
 
+//Slider for banners
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
@@ -192,6 +193,36 @@ buttonEshop.addEventListener("click", function () {
 
 buttonBA.addEventListener("click", function () {
   backgroundLocality.style.backgroundImage = "url('img/bratislava.png')";
+});
+
+//change background of locality in mobile
+document.addEventListener("DOMContentLoaded", function () {
+  const isMobile = window.innerWidth <= 768; // Určíme, zda jde o mobilní zařízení
+
+  if (isMobile) {
+    const buttons = document.querySelectorAll(".buy-button");
+    const lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox");
+    document.body.appendChild(lightbox);
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const imageURL = button.getAttribute("data-image");
+        lightbox.innerHTML = `
+          <div class="lightbox-content">
+            <span class="close-lightbox">×</span>
+            <img src="${imageURL}" alt="Image">
+          </div>
+        `;
+        lightbox.style.display = "block";
+
+        const closeLightbox = lightbox.querySelector(".close-lightbox");
+        closeLightbox.addEventListener("click", function () {
+          lightbox.style.display = "none";
+        });
+      });
+    });
+  }
 });
 
 // JavaScript pro otevření/zavření mobilního menu
@@ -270,25 +301,43 @@ document.addEventListener("DOMContentLoaded", function () {
     "img/feedback4.png",
   ];
   const backgroundContainer = document.querySelector(".background-image");
+  const dots = document.querySelectorAll(".dot");
 
   let currentIndexReview = 0;
   let isMobile = false;
 
-  function changeBackground() {
-    const newBackground = backgrounds[currentIndexReview];
+  function changeBackground(index) {
+    const newBackground = backgrounds[index];
     backgroundContainer.style.backgroundImage = `url(${newBackground})`;
-    currentIndexReview = (currentIndexReview + 1) % backgrounds.length;
   }
 
   function checkIsMobile() {
     isMobile = window.innerWidth <= 768; // Zmeniť tento limit podľa potreby
   }
 
+  // Zmena pozadia na základě kliknutí na kruhy
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", function () {
+      changeBackground(index);
+      currentIndexReview = index;
+
+      // Aktualizovat třídu "active" pro kruhy
+      dots.forEach((d) => d.classList.remove("active"));
+      dot.classList.add("active");
+    });
+  });
+
   // Zmena pozadia iba pro mobilní zařízení
   function startBackgroundChangeForMobile() {
     if (isMobile) {
-      setInterval(changeBackground, 4000); // Zmeniť časový interval podľa potreby
-      changeBackground();
+      setInterval(() => {
+        currentIndexReview = (currentIndexReview + 1) % backgrounds.length;
+        changeBackground(currentIndexReview);
+
+        // Aktualizovat třídu "active" pro kruhy
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[currentIndexReview].classList.add("active");
+      }, 4000); // Zmeniť časový interval podľa potreby
     }
   }
 
