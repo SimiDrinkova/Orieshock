@@ -219,3 +219,45 @@ mobileMenuIcon.addEventListener("click", function () {
     bar3.style.transform = "none";
   }
 });
+
+// Lightbox na mobil
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxInfo = document.getElementById("lightbox-info");
+  const lightboxTitle = document.getElementById("lightbox-title");
+
+  if (window.innerWidth <= 768) {
+    const imageContainers = document.querySelectorAll(".image-container");
+
+    imageContainers.forEach((container) => {
+      const img = container.querySelector("img");
+      const nutritionOverlay = container.querySelector(".nutrition-overlay");
+      const info = img.getAttribute("data-info");
+      const overlayTitle = img.getAttribute("data-overlay-title");
+      const weight = img.getAttribute("data-weight");
+
+      nutritionOverlay.innerHTML = `
+        <h3 class="overlay-title">${overlayTitle}</h3>
+        <br>
+        <p>${info}</p>
+        <p>${weight}</p>
+      `;
+
+      container.addEventListener("click", function () {
+        lightboxInfo.innerHTML = info;
+        lightboxTitle.innerHTML = `<img src="${img.src}" alt="${overlayTitle}"> <br> <p>${weight}`;
+        lightbox.style.display = "block";
+      });
+    });
+  }
+});
+
+//Zatvorenie ligthboxu Xkom
+document.addEventListener("DOMContentLoaded", function () {
+  const closeLightbox = document.getElementById("close-lightbox");
+  const lightbox = document.getElementById("lightbox");
+
+  closeLightbox.addEventListener("click", function () {
+    lightbox.style.display = "none";
+  });
+});

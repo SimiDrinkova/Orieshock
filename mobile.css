@@ -2,13 +2,69 @@
 @media screen and (max-width: 768px) {
     /* Upravit velikost písma a okraje pro nadpisy a odstavce */
     .about-us h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 30px;
     }
     .about p {
         font-size: 16px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
+
+
+    .about-us h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      border-bottom: 1px solid #A97C50 ;
+      margin: 15px auto;
+  }
+
+  .history h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    border-bottom: 1px solid #A97C50;
+    margin: 15px auto;
+}    
+
+.products h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  border-bottom: 1px solid #A97C50;
+  margin: 15px auto;
+}
+
+.reviews h2::after {
+  content: "";
+  display: none;
+  width: 200px;
+  border-bottom: 1px solid #A97C50;
+  margin: 15px auto;
+}
+
+.where-to-buy h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  border-bottom: 1px solid #A97C50 ;
+  margin: 15px auto;
+}
+
+.contacts h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  border-bottom: 1px solid #A97C50;
+  margin: 15px auto;
+}
+
+.brand-logo img {
+  margin-top: 20px;
+  width: 40%;
+}
 
     /* Vytvoření sloupců, které se na menších obrazovkách zobrazují vertikálně */
     .about .col {
@@ -35,9 +91,10 @@
         text-align: center;
     }
 
-    .products .col {
-        width: 50%; /* Šírka stĺpca na celú šírku obrazovky */
-        margin-bottom: 20px; /* Odstup medzi stĺpcami */
+    .product-container {
+      width: 50%;
+      float: left;
+      box-sizing: border-box;
     }
 
     .contact-form.row {
@@ -84,6 +141,15 @@
         margin-top: 5px; /* Adjust margin as needed */
     }
 
+    h2 {
+      font-size: 18px; /* Adjust font size as needed */
+      margin-top: 5px; /* Adjust margin as needed */
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
     .my_bttn {
         display: none !important;
     }
@@ -97,7 +163,7 @@
         display: none;
         background-color: rgba(211, 170, 125, 0.5);
         position: absolute;
-        top: 90px; /* Výška hlavičky */
+        top: 70px; /* Výška hlavičky */
         right: 0;
         width: 50%;
         flex-direction: column;
@@ -106,6 +172,7 @@
         border: 3px solid #603913;
         border-radius: 10px;
         padding: 5;
+        z-index: 999;
 
       }
       
@@ -125,6 +192,23 @@
         border-bottom: 1px solid #603913!important; /* Přidáme oddělovací linku mezi položkami */
       }
       
+      .animated-arrows {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    .nutrition-overlay {
+        display: none;
+      }
+
+      .text-effect {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+
 
 }
-
