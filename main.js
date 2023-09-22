@@ -263,37 +263,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Meni background v reviews
-const backgrounds = [
-  "img/feedback1.png",
-  "img/feedback2.png",
-  "img/feedback4.png",
-];
-const backgroundContainer = document.querySelector(".background-image");
+document.addEventListener("DOMContentLoaded", function () {
+  const backgrounds = [
+    "img/feedback1.png",
+    "img/feedback2.png",
+    "img/feedback4.png",
+  ];
+  const backgroundContainer = document.querySelector(".background-image");
 
-let currentIndexReview = 0;
-let isMobile = false;
+  let currentIndexReview = 0;
+  let isMobile = false;
 
-function changeBackground() {
-  const newBackground = backgrounds[currentIndex];
-  backgroundContainer.style.backgroundImage = `url(${newBackground})`;
-  currentIndex = (currentIndex + 1) % backgrounds.length;
-}
-
-function checkIsMobile() {
-  isMobile = window.innerWidth <= 768; // Zmeniť tento limit podľa potreby
-}
-
-// Zmena pozadia iba pre mobilné zariadenia
-function startBackgroundChangeForMobile() {
-  if (isMobile) {
-    setInterval(changeBackground, 4000); // Zmeniť časový interval podľa potreby
-    changeBackground();
+  function changeBackground() {
+    const newBackground = backgrounds[currentIndexReview];
+    backgroundContainer.style.backgroundImage = `url(${newBackground})`;
+    currentIndexReview = (currentIndexReview + 1) % backgrounds.length;
   }
-}
 
-// Spustíme kontrolu na detekciu mobilných zariadení pri načítaní stránky
-checkIsMobile();
-startBackgroundChangeForMobile();
+  function checkIsMobile() {
+    isMobile = window.innerWidth <= 768; // Zmeniť tento limit podľa potreby
+  }
 
-// Aktualizujeme detekciu mobilných zariadení pri zmenách veľkosti okna
-window.addEventListener("resize", checkIsMobile);
+  // Zmena pozadia iba pro mobilní zařízení
+  function startBackgroundChangeForMobile() {
+    if (isMobile) {
+      setInterval(changeBackground, 4000); // Zmeniť časový interval podľa potreby
+      changeBackground();
+    }
+  }
+
+  // Spustit kontrolu na detekci mobilních zařízení až po načtení stránky
+  checkIsMobile();
+  startBackgroundChangeForMobile();
+
+  // Aktualizovat detekci mobilních zařízení při změně velikosti okna
+  window.addEventListener("resize", checkIsMobile);
+});
