@@ -133,13 +133,35 @@
 
     .background-image {
         background-size: cover; /* Adjust background size as needed */
-        height: 200px; /* Adjust the height as needed */
+        height: 300px; /* Adjust the height as needed */
     }
 
     .reviews h2 {
         font-size: 15px; /* Adjust font size as needed */
         margin-top: 5px; /* Adjust margin as needed */
     }
+
+    .reviews {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      border: 1px solid #A97C50;
+      margin-top: 20px;
+      overflow: hidden;
+  }
+
+    .reviews .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: url(img/feedback1.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+  }
+
 
     h2 {
       font-size: 18px; /* Adjust font size as needed */
@@ -208,6 +230,7 @@
         margin-left: 10px;
         margin-right: 10px;
       }
+      
 
 
 

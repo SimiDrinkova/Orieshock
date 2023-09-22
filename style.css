@@ -498,6 +498,11 @@ h4 {
     z-index: -1;
 }
 
+.mobile-only {
+    display: none; /* Predvolené skrytie pre ne-mobilné zariadenia */
+}
+
+
 /*** Where to buy ***/
 
 .where-to-buy {
