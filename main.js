@@ -261,3 +261,39 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.style.display = "none";
   });
 });
+
+// Meni background v reviews
+const backgrounds = [
+  "img/feedback1.png",
+  "img/feedback2.png",
+  "img/feedback4.png",
+];
+const backgroundContainer = document.querySelector(".background-image");
+
+let currentIndexReview = 0;
+let isMobile = false;
+
+function changeBackground() {
+  const newBackground = backgrounds[currentIndex];
+  backgroundContainer.style.backgroundImage = `url(${newBackground})`;
+  currentIndex = (currentIndex + 1) % backgrounds.length;
+}
+
+function checkIsMobile() {
+  isMobile = window.innerWidth <= 768; // Zmeniť tento limit podľa potreby
+}
+
+// Zmena pozadia iba pre mobilné zariadenia
+function startBackgroundChangeForMobile() {
+  if (isMobile) {
+    setInterval(changeBackground, 4000); // Zmeniť časový interval podľa potreby
+    changeBackground();
+  }
+}
+
+// Spustíme kontrolu na detekciu mobilných zariadení pri načítaní stránky
+checkIsMobile();
+startBackgroundChangeForMobile();
+
+// Aktualizujeme detekciu mobilných zariadení pri zmenách veľkosti okna
+window.addEventListener("resize", checkIsMobile);
