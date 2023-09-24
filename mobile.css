@@ -11,7 +11,7 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-
+    
 
     .about-us h2::after {
       content: '';
@@ -163,6 +163,7 @@
       z-index: -1;
   }
 
+
   .dot-container {
     position: absolute;
     bottom: 15px; /* Úprava dle vašeho designu */
@@ -205,6 +206,7 @@
         display: block;
         padding-right: 10px;
     }
+
 
     #navbar_list {
         display: none;
@@ -257,6 +259,8 @@
       }
       
 
-
+      .products .col {
+        width: 50%;
+      }
 
 }
