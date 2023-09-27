@@ -263,4 +263,16 @@
         width: 50%;
       }
 
-}
+      .social-container {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 10px;
+      }
+
+      .contact-info {
+        text-align: center; /* Zarovnanie obsahu na stred */
+        margin-left: auto; /* Odstránenie ľavého odsadenia (margin) */
+        margin-right: auto; /* Odstránenie pravého odsadenia (margin) */
+        margin: 15px;
+      }
+    }
