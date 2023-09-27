@@ -195,36 +195,6 @@ buttonBA.addEventListener("click", function () {
   backgroundLocality.style.backgroundImage = "url('img/bratislava.png')";
 });
 
-//change background of locality in mobile
-document.addEventListener("DOMContentLoaded", function () {
-  const isMobile = window.innerWidth <= 768; // Určíme, zda jde o mobilní zařízení
-
-  if (isMobile) {
-    const buttons = document.querySelectorAll(".buy-button");
-    const lightbox = document.createElement("div");
-    lightbox.classList.add("lightbox");
-    document.body.appendChild(lightbox);
-
-    buttons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const imageURL = button.getAttribute("data-image");
-        lightbox.innerHTML = `
-          <div class="lightbox-content">
-            <span class="close-lightbox">×</span>
-            <img src="${imageURL}" alt="Image">
-          </div>
-        `;
-        lightbox.style.display = "block";
-
-        const closeLightbox = lightbox.querySelector(".close-lightbox");
-        closeLightbox.addEventListener("click", function () {
-          lightbox.style.display = "none";
-        });
-      });
-    });
-  }
-});
-
 // JavaScript pro otevření/zavření mobilního menu
 
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
