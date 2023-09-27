@@ -96,6 +96,33 @@ header {
     color: #A97C50;
 }
 
+
+.mobile-menu-icon {
+    display: none; /* Skrytí hamburger ikony na větších obrazovkách */
+    cursor: pointer;
+}
+
+.mobile-menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #603913;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.navbar-menu.active ul {
+    display: flex; /* Zobrazení navigačního menu po kliknutí na hamburger ikonu */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Výška hlavičky */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+
 .prev-button,
 .next-button {
     position: absolute;
@@ -212,6 +239,11 @@ header {
     color: #603913;
 }
 
+.about-us h3 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
 /*** History ***/
 
 .history h2 {
@@ -279,10 +311,6 @@ header {
     overflow: hidden;*/
 }
 
-.products img:hover {
-   /* opacity: 0.5;
-    scale: 1;*/
-}
 
 .image-container {
     position: relative;
@@ -466,6 +494,13 @@ h4 {
     z-index: -1;
 }
 
+.mobile-only {
+    display: none; /* Predvolené skrytie pre ne-mobilné zariadenia */
+}
+
+
+
+
 /*** Where to buy ***/
 
 .where-to-buy {
@@ -473,19 +508,19 @@ h4 {
     margin-top: 20px;
     margin-bottom: 20px;
     transition: background-image 0.5s ease; /* Animácia zmeny pozadia */
-    background: url(img/bratislava.png);
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 400px; /* Prispôsobte výšku podľa potreby */
+    min-height: 400px; /* Prispôsobte výšku podľa potreby */
     width: 100%;
-}
+    position: relative; /* Přidáme pozici relativní pro lightbox */
+  }
 
-.where-to-buy h2 {
+  .where-to-buy h2 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-}
+  }
 
 .where-to-buy h2::after {
     content: '';
@@ -496,10 +531,11 @@ h4 {
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Položky na malých obrazovkách se zalamují na další řádek */
+  justify-content: center;
+  gap: 10px; /* Snížení mezery mezi tlačítky */
+  margin-top: 30px;
 }
 
 .buy-button {
@@ -611,5 +647,41 @@ h4 {
     font-size: 25px;
 }
   
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.lightbox-content {
+    position: fixed;
+    top: 8%;
+    left: 8%;
+    width: 85%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(254, 217, 176, 0.8);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+
 
 

@@ -128,6 +128,7 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(historySection);
 
+//Slider for banners
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
@@ -192,4 +193,128 @@ buttonEshop.addEventListener("click", function () {
 
 buttonBA.addEventListener("click", function () {
   backgroundLocality.style.backgroundImage = "url('img/bratislava.png')";
+});
+
+// JavaScript pro otevření/zavření mobilního menu
+
+const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+const navbarList = document.getElementById("navbar_list");
+const bar1 = document.querySelector(".mobile-menu-icon .bar:first-child");
+const bar2 = document.querySelector(".mobile-menu-icon .bar:nth-child(2)");
+const bar3 = document.querySelector(".mobile-menu-icon .bar:last-child");
+
+mobileMenuIcon.addEventListener("click", function () {
+  navbarList.classList.toggle("mobile-menu-open"); // Přepnout třídu 'mobile-menu-open'
+
+  // Zkontrolujte, zda má menu třídu 'mobile-menu-open' a podle toho nastavte zobrazení
+  if (navbarList.classList.contains("mobile-menu-open")) {
+    navbarList.style.display = "block";
+    bar1.style.transform = "rotate(-45deg) translate(-5px, 6px)";
+    bar2.style.opacity = 0;
+    bar3.style.transform = "rotate(45deg) translate(-5px, -6px)";
+  } else {
+    navbarList.style.display = "none";
+    // Pokud je mobilní menu zavřené, vrátit hamburger ikonu
+    bar1.style.transform = "none";
+    bar2.style.opacity = 1;
+    bar3.style.transform = "none";
+  }
+});
+
+// Lightbox na mobil
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxInfo = document.getElementById("lightbox-info");
+  const lightboxTitle = document.getElementById("lightbox-title");
+
+  if (window.innerWidth <= 768) {
+    const imageContainers = document.querySelectorAll(".image-container");
+
+    imageContainers.forEach((container) => {
+      const img = container.querySelector("img");
+      const nutritionOverlay = container.querySelector(".nutrition-overlay");
+      const info = img.getAttribute("data-info");
+      const overlayTitle = img.getAttribute("data-overlay-title");
+      const weight = img.getAttribute("data-weight");
+
+      nutritionOverlay.innerHTML = `
+        <h3 class="overlay-title">${overlayTitle}</h3>
+        <br>
+        <p>${info}</p>
+        <p>${weight}</p>
+      `;
+
+      container.addEventListener("click", function () {
+        lightboxInfo.innerHTML = info;
+        lightboxTitle.innerHTML = `<img src="${img.src}" alt="${overlayTitle}"> <br> <p>${weight}`;
+        lightbox.style.display = "block";
+      });
+    });
+  }
+});
+
+//Zatvorenie ligthboxu Xkom
+document.addEventListener("DOMContentLoaded", function () {
+  const closeLightbox = document.getElementById("close-lightbox");
+  const lightbox = document.getElementById("lightbox");
+
+  closeLightbox.addEventListener("click", function () {
+    lightbox.style.display = "none";
+  });
+});
+
+// Meni background v reviews
+document.addEventListener("DOMContentLoaded", function () {
+  const backgrounds = [
+    "img/feedback1.png",
+    "img/feedback2.png",
+    "img/feedback4.png",
+  ];
+  const backgroundContainer = document.querySelector(".background-image");
+  const dots = document.querySelectorAll(".dot");
+
+  let currentIndexReview = 0;
+  let isMobile = false;
+
+  function changeBackground(index) {
+    const newBackground = backgrounds[index];
+    backgroundContainer.style.backgroundImage = `url(${newBackground})`;
+  }
+
+  function checkIsMobile() {
+    isMobile = window.innerWidth <= 768; // Zmeniť tento limit podľa potreby
+  }
+
+  // Zmena pozadia na základě kliknutí na kruhy
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", function () {
+      changeBackground(index);
+      currentIndexReview = index;
+
+      // Aktualizovat třídu "active" pro kruhy
+      dots.forEach((d) => d.classList.remove("active"));
+      dot.classList.add("active");
+    });
+  });
+
+  // Zmena pozadia iba pro mobilní zařízení
+  function startBackgroundChangeForMobile() {
+    if (isMobile) {
+      setInterval(() => {
+        currentIndexReview = (currentIndexReview + 1) % backgrounds.length;
+        changeBackground(currentIndexReview);
+
+        // Aktualizovat třídu "active" pro kruhy
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[currentIndexReview].classList.add("active");
+      }, 4000); // Zmeniť časový interval podľa potreby
+    }
+  }
+
+  // Spustit kontrolu na detekci mobilních zařízení až po načtení stránky
+  checkIsMobile();
+  startBackgroundChangeForMobile();
+
+  // Aktualizovat detekci mobilních zařízení při změně velikosti okna
+  window.addEventListener("resize", checkIsMobile);
 });
