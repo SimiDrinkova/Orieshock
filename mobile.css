@@ -243,7 +243,7 @@
       
       .animated-arrows {
         position: absolute;
-        top: 70%;
+        top: 75%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -279,19 +279,5 @@
       .long-text {
         margin-bottom: -19px;
       }
-
- /*     .slide img {
-        display: none;
-    }
-    .slide img[srcset^="img/Untitled1_mobile.jpg"],
-    .slide img[srcset^="img/Untitled5_mobile.jpg"],
-    .slide img[srcset^="img/Untitled4_mobile.jpg"],
-    .slide img[srcset^="img/Untitled8_mobile.jpg"],
-    .slide img[srcset^="img/Untitled7_mobile.jpg"],
-    .slide img[srcset^="img/Untitled2_mobile.jpg"],
-    .slide img[srcset^="img/Untitled3_mobile.jpg"],
-    .slide img[srcset^="img/Untitled6_mobile.jpg"] {
-      display: block;
-  }*/
 
 }
