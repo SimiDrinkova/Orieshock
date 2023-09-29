@@ -133,13 +133,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
 
+  const mobileImages = [
+    "img/Untitled1_mobile.jpg",
+    "img/Untitled2_mobile.jpg",
+    "img/Untitled3_mobile.jpg",
+    "img/Untitled4_mobile.jpg",
+    "img/Untitled5_mobile.jpg",
+    "img/Untitled6_mobile.jpg",
+    "img/Untitled7_mobile.jpg",
+    "img/Untitled8_mobile.jpg",
+  ];
+
+  const desktopImages = [
+    "img/Untitled-10.jpg",
+    "img/Untitled-11.jpg",
+    "img/Untitled-12.jpg",
+    "img/Untitled-2.jpg",
+    "img/Untitled-4.jpg",
+    "img/Untitled-7.jpg",
+    "img/Untitled-8.jpg",
+    "img/Untitled-9.jpg",
+  ];
+
   let currentSlideIndex = 0;
+  let isMobile = false;
 
   function startAutoSlide() {
     setInterval(nextSlide, 8000); // Přepínání každých 8 sekund
   }
 
-  startAutoSlide(); // Spustit automatické přepínání po načtení stránky
+  startAutoSlide();
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -174,6 +197,32 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".next-button").addEventListener("click", nextSlide);
 
   showSlide(currentSlideIndex);
+
+  function checkIsMobile() {
+    isMobile = window.innerWidth <= 768; // Nastavte tady šířku, která určuje, co je považováno za mobilní zařízení
+  }
+
+  checkIsMobile();
+
+  window.addEventListener("resize", checkIsMobile);
+
+  function updateImages() {
+    const images = isMobile ? mobileImages : desktopImages;
+
+    slides.forEach((slide, index) => {
+      const img = slide.querySelector("img");
+      if (index < images.length) {
+        img.src = images[index];
+        img.style.display = "block"; // Zobrazit obrázky podle počtu dostupných obrázků
+      } else {
+        img.style.display = "none"; // Skrýt obrázky, které nejsou dostupné na aktuální verzi
+      }
+    });
+  }
+
+  updateImages();
+
+  window.addEventListener("resize", updateImages);
 });
 
 // Change background of locality
