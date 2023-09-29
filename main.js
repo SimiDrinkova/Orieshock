@@ -282,6 +282,13 @@ const bar1 = document.querySelector(".mobile-menu-icon .bar:first-child");
 const bar2 = document.querySelector(".mobile-menu-icon .bar:nth-child(2)");
 const bar3 = document.querySelector(".mobile-menu-icon .bar:last-child");
 
+navbarList.addEventListener("click", function () {
+  navbarList.style.display = "none";
+  bar1.style.transform = "none";
+  bar2.style.opacity = 1;
+  bar3.style.transform = "none";
+});
+
 mobileMenuIcon.addEventListener("click", function () {
   navbarList.classList.toggle("mobile-menu-open"); // Přepnout třídu 'mobile-menu-open'
 
