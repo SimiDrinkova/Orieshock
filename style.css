@@ -406,6 +406,27 @@ h4 {
     color: #603913
 }
 
+.order-long-text {
+    font-size: 15px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 100px;
+    height: 35px;
+    font-family: 'Playfair Display', sans-serif;
+    background-color: white;
+    outline: none;
+    border: 1px solid #D3AA7D;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    color: #603913
+  }
+
 .products a {
     text-decoration: none;
 }
@@ -487,11 +508,35 @@ h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(img/6.png);
+    background: url(img/desktop_verzia_recenzia1.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+}
+
+.dot-container {
+    position: absolute;
+    bottom: 15px; /* Úprava dle vašeho designu */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    border: 1px solid #603913;
+    border-radius: 50px;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    cursor: pointer
+}
+
+.dot.active {
+    background-color: #A97C50;
+    border-color: #603913;
+    color:rgba(0, 0, 0, 0.3); ;
 }
 
 .mobile-only {
@@ -511,7 +556,7 @@ h4 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 400px; /* Prispôsobte výšku podľa potreby */
+    min-height: 200px; /* Prispôsobte výšku podľa potreby */
     width: 100%;
     position: relative; /* Přidáme pozici relativní pro lightbox */
   }
@@ -534,8 +579,9 @@ h4 {
   display: flex;
   flex-wrap: wrap; /* Položky na malých obrazovkách se zalamují na další řádek */
   justify-content: center;
-  gap: 10px; /* Snížení mezery mezi tlačítky */
-  margin-top: 30px;
+  gap: 20px; /* Snížení mezery mezi tlačítky */
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .buy-button {
@@ -652,7 +698,7 @@ h4 {
     border: 1px solid #A97C50;
     color: #A97C50;
     position: fixed;
-    bottom: 40px;
+    bottom: 65px;
     right: 30px;
     border-radius: 25px;
     cursor: pointer;
@@ -684,6 +730,40 @@ h4 {
     z-index: 999;
 }
 
+.lightbox-locality {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+#lightbox-image {
+    position: fixed;
+    top: 25%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(254, 217, 176, 0.8);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#close-lightbox-locality {
+    position: absolute;
+    top: 28%;
+    right: 30px;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 9999;
+}
+
 .lightbox-content {
     position: fixed;
     top: 8%;
@@ -705,6 +785,11 @@ h4 {
     right: 10px;
     cursor: pointer;
     font-size: 30px;
+}
+
+.cookies {
+    color: black;
+    font-size: 16px;
 }
 
 

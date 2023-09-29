@@ -156,7 +156,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: url(img/feedback1.png);
+      background: url(img/mobile_verzia_recenzia1.png);
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -274,5 +274,9 @@
         margin-left: auto; /* Odstránenie ľavého odsadenia (margin) */
         margin-right: auto; /* Odstránenie pravého odsadenia (margin) */
         margin: 15px;
+      }
+
+      .long-text {
+        margin-bottom: -19px;
       }
     }
