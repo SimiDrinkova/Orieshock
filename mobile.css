@@ -48,7 +48,7 @@
 .where-to-buy h2::after {
   content: '';
   display: block;
-  width: 100px;
+  width: 130px;
   border-bottom: 1px solid #A97C50 ;
   margin: 15px auto;
 }
@@ -190,7 +190,7 @@
 
 
     h2 {
-      font-size: 18px; /* Adjust font size as needed */
+      font-size: 16px; /* Adjust font size as needed */
       margin-top: 5px; /* Adjust margin as needed */
   }
 
