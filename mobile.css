@@ -289,6 +289,28 @@
         z-index: 9999;
     }
 
+    .cookie-web {
+      text-align: center;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    
+    .cookie-text {
+      margin-left: 20px;
+      margin-right: 20px;
+      text-align: center;
+      word-wrap: normal;
+    }
+
+    .logo-cookie img {
+      margin-top: 20px;
+      margin-left: 20px;
+      width: 40%;
+    }
+  
+
 }
 
 @media only screen and (min-width: 1280px) and (max-width: 1440px) {
@@ -321,5 +343,7 @@
   padding: 10px 0;
   z-index: 1;
   }
+
+
 } 
 
