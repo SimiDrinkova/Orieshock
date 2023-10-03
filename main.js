@@ -57,7 +57,7 @@ document.querySelector(".my_bttn").addEventListener("click", function (e) {
     toElement: document.querySelector(".main-header"),
     duration: 500,
   });
-});
+}); 
 
 // @ts-ignore
 // scroll button
@@ -295,10 +295,14 @@ const bar2 = document.querySelector(".mobile-menu-icon .bar:nth-child(2)");
 const bar3 = document.querySelector(".mobile-menu-icon .bar:last-child");
 
 navbarList.addEventListener("click", function () {
-  navbarList.style.display = "none";
-  bar1.style.transform = "none";
-  bar2.style.opacity = 1;
-  bar3.style.transform = "none";
+  if (window.innerWidth <= 768) {
+    navbarList.style.display = "none";
+    bar1.style.transform = "none";
+    bar2.style.opacity = 1;
+    bar3.style.transform = "none";
+  } else {
+    navbarList.style.display = "flex";
+  }
 });
 
 mobileMenuIcon.addEventListener("click", function () {
@@ -318,6 +322,10 @@ mobileMenuIcon.addEventListener("click", function () {
     bar3.style.transform = "none";
   }
 });
+
+
+
+
 
 // Lightbox na mobil
 document.addEventListener("DOMContentLoaded", function () {

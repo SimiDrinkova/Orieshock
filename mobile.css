@@ -290,3 +290,36 @@
     }
 
 }
+
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+  #lightbox-image {
+    max-width: 800px;
+    height: 600px;
+    position: fixed;
+    top: 5%;
+    right: 22%;
+  }
+
+  #close-lightbox-locality {
+    position: absolute;
+    top: 7%;
+    right: 24%;
+    cursor: pointer;
+    font-size: 25px;
+    z-index: 9999;
+}
+
+  .navbar-menu  {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  background:transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 1;
+  }
+} 
+
