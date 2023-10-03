@@ -249,15 +249,27 @@ function closeLightbox() {
 }
 
 buttonTT.addEventListener("click", function () {
-  openLightbox("img/ostatne_kraje_desktop.png");
+  if (window.innerHeight <= 768) {
+    openLightbox("img/buy_mobile_inekraje.png");
+  } else {
+    openLightbox("img/ostatne_kraje_desktop.png");
+  }
 });
 
 buttonEshop.addEventListener("click", function () {
-  openLightbox("img/eshopy_desktop.s.png");
+  if (window.innerHeight <= 768) {
+    openLightbox("img/buy_mobile_eshop.png");
+  } else {
+    openLightbox("img/eshop_desktop.png");
+  }
 });
 
 buttonBA.addEventListener("click", function () {
-  openLightbox("img/BA_desktop.png");
+  if (window.innerHeight <= 768) {
+    openLightbox("img/buy_mobile_BA.png");
+  } else {
+    openLightbox("img/BA_desktop.png");
+  }
 });
 
 // Obsluha zatvorenia lightboxu
@@ -415,10 +427,10 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const desktopBackgrounds = [
-    "img/desktop_verzia_recenzia1.png",
-    "img/desktop_verzia_recenzie2.png",
-    "img/desktop_verzia_recenzia3.png",
-    "img/desktop_verzia_recenzia4.png",
+    "img/desktop_new_rew1.png",
+    "img/desktop_new_rew2.png",
+    "img/desktop_new_rew3.png",
+    "img/desktop_new_rew4.png",
   ];
 
   const backgroundContainer = document.querySelector(".background-image");

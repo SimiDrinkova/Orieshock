@@ -280,4 +280,13 @@
         margin-bottom: -19px;
       }
 
+      #close-lightbox-locality {
+        position: absolute;
+        top: 27%;
+        right: 25px;
+        cursor: pointer;
+        font-size: 25px;
+        z-index: 9999;
+    }
+
 }
