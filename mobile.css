@@ -297,11 +297,13 @@
       margin-right: 10px;
     }
     
-    .cookie-text {
+    .cookie-text  {
       margin-left: 20px;
       margin-right: 20px;
       text-align: center;
       word-wrap: normal;
+      font-family: 'DIN PRO LIGHT';
+      font-size: 14px;
     }
 
     .logo-cookie img {
