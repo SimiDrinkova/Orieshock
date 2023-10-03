@@ -504,3 +504,46 @@ document.addEventListener("DOMContentLoaded", function () {
   startBackgroundChangeForMobile();
   startBackgroundChangeForDesktop(); // Spustit zmenu pozadia pre desktop
 });
+
+
+
+//cookies 
+document.addEventListener("DOMContentLoaded", function () {
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptCookiesButton = document.getElementById("accept-cookies");
+  const declineCookiesButton = document.getElementById("decline-cookies")
+
+  // Skontrolujeme, či užívateľ už prijal súbory cookie
+  const hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
+
+  if (!hasAcceptedCookies) {
+    // Ak užívateľ neprijal súbory cookie, zobrazíme banner
+    cookieBanner.style.display = "block";
+  }
+
+  // Obsluha kliknutia na tlačidlo Súhlasím
+  acceptCookiesButton.addEventListener("click", function () {
+    // Uložíme informáciu o tom, že užívateľ prijal súbory cookie
+    localStorage.setItem("cookiesAccepted", "true");
+    // Skryjeme banner
+    cookieBanner.style.display = "none";
+  });
+
+  declineCookiesButton.addEventListener("click", function () {
+    localStorage.setItem("cookiesAccepted", "declined")
+    deleteAllCookies();
+    cookieBanner.style.display = "none";
+  })
+});
+
+function deleteAllCookies() {
+  const cookies = document.cookie.split(";");
+
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i];
+    const eqPos = cookie.indexOf("=");
+    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+  }
+}
+
