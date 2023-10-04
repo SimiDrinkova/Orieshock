@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "DIN PRO LIGHT";
+    src: url(fonts/DIN-Pro-Light.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -89,6 +94,7 @@ header {
     font-size: 23px;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-weight: bold;
     
 }
 
@@ -354,6 +360,7 @@ header {
   
   .nutrition-overlay p {
     text-align: center;
+    font-weight: bold;
     margin: 0px 0;
     color:#603913;
     font-size: 15px;
@@ -394,7 +401,7 @@ h4 {
     border-radius: 8px;
     width: 100px;
     height: 35px;
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'DIN PRO LIGHT', sans-serif;
     background-color: white;
     outline: none;
     border: 1px solid #D3AA7D;
@@ -402,7 +409,8 @@ h4 {
     text-align: center;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    color: #603913
+    color: #603913;
+    font-weight: bold;
 }
 
 .order-long-text {
@@ -592,6 +600,7 @@ h4 {
     cursor: pointer;
     border-radius: 8px;
     font-family:'DIN PRO LIGHT';
+    font-weight: bold;
 }
 
 .buy-button:active {
@@ -680,7 +689,7 @@ h4 {
 }
 
 .social-container:hover {
-    background-color:orange;
+    background-color: #A97C50;
 }
 
 
@@ -689,6 +698,7 @@ h4 {
     text-align: center;
     background-color: #A97C50;
     padding: 10px;
+    font-weight: bold;
 }
 
 /* Scroll to Top*/
