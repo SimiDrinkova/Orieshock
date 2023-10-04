@@ -57,7 +57,7 @@ document.querySelector(".my_bttn").addEventListener("click", function (e) {
     toElement: document.querySelector(".main-header"),
     duration: 500,
   });
-}); 
+});
 
 // @ts-ignore
 // scroll button
@@ -74,6 +74,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Overlay pre produkty
 document.addEventListener("DOMContentLoaded", function () {
   const imageContainers = document.querySelectorAll(".image-container");
 
@@ -199,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
   showSlide(currentSlideIndex);
 
   function checkIsMobile() {
-    isMobile = window.innerWidth <= 768; // Nastavte tady šířku, která určuje, co je považováno za mobilní zařízení
+    isMobile = window.innerWidth <= 768; // Nastavenie sirky ktora určuje, čo je považované za mobil
   }
 
   checkIsMobile();
@@ -213,9 +214,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const img = slide.querySelector("img");
       if (index < images.length) {
         img.src = images[index];
-        img.style.display = "block"; // Zobrazit obrázky podle počtu dostupných obrázků
+        img.style.display = "block";
       } else {
-        img.style.display = "none"; // Skrýt obrázky, které nejsou dostupné na aktuální verzi
+        img.style.display = "none";
       }
     });
   }
@@ -272,13 +273,13 @@ buttonBA.addEventListener("click", function () {
   }
 });
 
-// Obsluha zatvorenia lightboxu
+// zatvorenia lightboxu
 const closeLightboxButton = document.getElementById("close-lightbox-locality");
 closeLightboxButton.addEventListener("click", function () {
   closeLightbox();
 });
 
-// Obsluha zatvorenia lightboxu kliknutím mimo neho
+// zatvorenia lightboxu kliknutím mimo neho
 window.addEventListener("click", function (event) {
   const lightbox = document.getElementById("lightbox-locality");
   if (event.target === lightbox) {
@@ -286,8 +287,7 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// JavaScript pro otevření/zavření mobilního menu
-
+// Otvorenie a zatvorenie hamburger menu
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
 const navbarList = document.getElementById("navbar_list");
 const bar1 = document.querySelector(".mobile-menu-icon .bar:first-child");
@@ -306,9 +306,9 @@ navbarList.addEventListener("click", function () {
 });
 
 mobileMenuIcon.addEventListener("click", function () {
-  navbarList.classList.toggle("mobile-menu-open"); // Přepnout třídu 'mobile-menu-open'
+  navbarList.classList.toggle("mobile-menu-open"); // Prepnutie triedy  'mobile-menu-open'
 
-  // Zkontrolujte, zda má menu třídu 'mobile-menu-open' a podle toho nastavte zobrazení
+  // Kontrola, či má menu classu  'mobile-menu-open' a podle toho nastavíme zobrazenie
   if (navbarList.classList.contains("mobile-menu-open")) {
     navbarList.style.display = "block";
     bar1.style.transform = "rotate(-45deg) translate(-5px, 6px)";
@@ -316,16 +316,12 @@ mobileMenuIcon.addEventListener("click", function () {
     bar3.style.transform = "rotate(45deg) translate(-5px, -6px)";
   } else {
     navbarList.style.display = "none";
-    // Pokud je mobilní menu zavřené, vrátit hamburger ikonu
+    // Ak je mobilné menu zatvorené, vrátit hamburger ikonu
     bar1.style.transform = "none";
     bar2.style.opacity = 1;
     bar3.style.transform = "none";
   }
 });
-
-
-
-
 
 // Lightbox na mobil
 document.addEventListener("DOMContentLoaded", function () {
@@ -426,6 +422,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", checkIsMobile);
 }); */
 
+// Meni background v reviews
 document.addEventListener("DOMContentLoaded", function () {
   const mobileBackgrounds = [
     "img/mobile_verzia_recenzia1.png",
@@ -463,13 +460,13 @@ document.addEventListener("DOMContentLoaded", function () {
       changeBackground(index, isMobile);
       currentIndexReview = index;
 
-      // Aktualizovat třídu "active" pre kruhy
+      // Aktualizovat triedu "active" pre kruhy
       dots.forEach((d) => d.classList.remove("active"));
       dot.classList.add("active");
     });
   });
 
-  // Zmena pozadia iba pre mobilné zařízení
+  // Zmena pozadia iba pre mobilné zariadenia
   function startBackgroundChangeForMobile() {
     if (isMobile) {
       setInterval(() => {
@@ -477,14 +474,14 @@ document.addEventListener("DOMContentLoaded", function () {
           (currentIndexReview + 1) % mobileBackgrounds.length;
         changeBackground(currentIndexReview, isMobile);
 
-        // Aktualizovat třídu "active" pre kruhy
+        // Aktualizovat classu "active" pre kruhy
         dots.forEach((dot) => dot.classList.remove("active"));
         dots[currentIndexReview].classList.add("active");
       }, 4000); // Zmeniť časový interval podľa potreby
     }
   }
 
-  // Zmena pozadia iba pre desktopové zařízení
+  // Zmena pozadia iba pre desktop
   function startBackgroundChangeForDesktop() {
     if (!isMobile) {
       setInterval(() => {
@@ -492,26 +489,24 @@ document.addEventListener("DOMContentLoaded", function () {
           (currentIndexReview + 1) % desktopBackgrounds.length;
         changeBackground(currentIndexReview, isMobile);
 
-        // Aktualizovat třídu "active" pre kruhy
+        // Aktualizovat classu "active" pre kruhy
         dots.forEach((dot) => dot.classList.remove("active"));
         dots[currentIndexReview].classList.add("active");
       }, 6000); // Zmeniť časový interval podľa potreby
     }
   }
 
-  // Spustit kontrolu na detekci mobilních zařízení až po načtení stránky
+  // Spustit kontrolu na detekciu mobilních zařízení až po načtení stránky
   checkIsMobile();
   startBackgroundChangeForMobile();
   startBackgroundChangeForDesktop(); // Spustit zmenu pozadia pre desktop
 });
 
-
-
-//cookies 
+//cookies
 document.addEventListener("DOMContentLoaded", function () {
   const cookieBanner = document.getElementById("cookie-banner");
   const acceptCookiesButton = document.getElementById("accept-cookies");
-  const declineCookiesButton = document.getElementById("decline-cookies")
+  const declineCookiesButton = document.getElementById("decline-cookies");
 
   // Skontrolujeme, či užívateľ už prijal súbory cookie
   const hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
@@ -530,10 +525,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   declineCookiesButton.addEventListener("click", function () {
-    localStorage.setItem("cookiesAccepted", "declined")
+    localStorage.setItem("cookiesAccepted", "declined");
     deleteAllCookies();
     cookieBanner.style.display = "none";
-  })
+  });
 });
 
 function deleteAllCookies() {
@@ -546,4 +541,3 @@ function deleteAllCookies() {
     document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
   }
 }
-
