@@ -37,6 +37,10 @@
   margin: 15px auto;
 }
 
+.products h3 {
+  font-size: 14px;
+}
+
 .reviews h2::after {
   content: "";
   display: none;
