@@ -74,6 +74,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Overlay pre produkty
 document.addEventListener("DOMContentLoaded", function () {
   const imageContainers = document.querySelectorAll(".image-container");
 
@@ -133,13 +134,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
 
+  const mobileImages = [
+    "img/Untitled1_mobile.jpg",
+    "img/Untitled2_mobile.jpg",
+    "img/Untitled3_mobile.jpg",
+    "img/Untitled4_mobile.jpg",
+    "img/Untitled5_mobile.jpg",
+    "img/Untitled6_mobile.jpg",
+    "img/Untitled7_mobile.jpg",
+    "img/Untitled8_mobile.jpg",
+  ];
+
+  const desktopImages = [
+    "img/Untitled-10.jpg",
+    "img/Untitled-11.jpg",
+    "img/Untitled-12.jpg",
+    "img/Untitled-2.jpg",
+    "img/Untitled-4.jpg",
+    "img/Untitled-7.jpg",
+    "img/Untitled-8.jpg",
+    "img/Untitled-9.jpg",
+  ];
+
   let currentSlideIndex = 0;
+  let isMobile = false;
 
   function startAutoSlide() {
     setInterval(nextSlide, 8000); // Přepínání každých 8 sekund
   }
 
-  startAutoSlide(); // Spustit automatické přepínání po načtení stránky
+  startAutoSlide();
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -174,39 +198,117 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".next-button").addEventListener("click", nextSlide);
 
   showSlide(currentSlideIndex);
+
+  function checkIsMobile() {
+    isMobile = window.innerWidth <= 768; // Nastavenie sirky ktora určuje, čo je považované za mobil
+  }
+
+  checkIsMobile();
+
+  window.addEventListener("resize", checkIsMobile);
+
+  function updateImages() {
+    const images = isMobile ? mobileImages : desktopImages;
+
+    slides.forEach((slide, index) => {
+      const img = slide.querySelector("img");
+      if (index < images.length) {
+        img.src = images[index];
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+      }
+    });
+  }
+
+  updateImages();
+
+  window.addEventListener("resize", updateImages);
 });
 
 // Change background of locality
+// JavaScript pre lightbox
 const buttonTT = document.querySelector("#btn-trnava");
 const buttonEshop = document.querySelector("#btn-eshop");
 const buttonBA = document.querySelector("#btn-bratislava");
 
 const backgroundLocality = document.querySelector(".where-to-buy");
 
+// Funkcia na otvorenie lightboxu s konkrétnym obrázkom
+function openLightbox(imageSrc) {
+  const lightbox = document.getElementById("lightbox-locality");
+  const lightboxImage = document.getElementById("lightbox-image");
+
+  lightboxImage.src = imageSrc;
+  lightbox.style.display = "block";
+}
+
+// Funkcia na zatvorenie lightboxu
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox-locality");
+  lightbox.style.display = "none";
+}
+
 buttonTT.addEventListener("click", function () {
-  backgroundLocality.style.backgroundImage = "url('img/TT.png')";
+  if (window.innerHeight <= 768) {
+    openLightbox("img/buy_mobile_inekraje.png");
+  } else {
+    openLightbox("img/ostatne_kraje_desktop.png");
+  }
 });
 
 buttonEshop.addEventListener("click", function () {
-  backgroundLocality.style.backgroundImage = "url('img/eshop.png')";
+  if (window.innerHeight <= 768) {
+    openLightbox("img/buy_mobile_eshop.png");
+  } else {
+    openLightbox("img/eshop_desktop.png");
+  }
 });
 
 buttonBA.addEventListener("click", function () {
-  backgroundLocality.style.backgroundImage = "url('img/bratislava.png')";
+  if (window.innerHeight <= 768) {
+    openLightbox("img/buy_mobile_BA.png");
+  } else {
+    openLightbox("img/BA_desktop.png");
+  }
 });
 
-// JavaScript pro otevření/zavření mobilního menu
+// zatvorenia lightboxu
+const closeLightboxButton = document.getElementById("close-lightbox-locality");
+closeLightboxButton.addEventListener("click", function () {
+  closeLightbox();
+});
 
+// zatvorenia lightboxu kliknutím mimo neho
+window.addEventListener("click", function (event) {
+  const lightbox = document.getElementById("lightbox-locality");
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// Otvorenie a zatvorenie hamburger menu
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
 const navbarList = document.getElementById("navbar_list");
 const bar1 = document.querySelector(".mobile-menu-icon .bar:first-child");
 const bar2 = document.querySelector(".mobile-menu-icon .bar:nth-child(2)");
 const bar3 = document.querySelector(".mobile-menu-icon .bar:last-child");
 
-mobileMenuIcon.addEventListener("click", function () {
-  navbarList.classList.toggle("mobile-menu-open"); // Přepnout třídu 'mobile-menu-open'
+navbarList.addEventListener("click", function () {
+  if (window.innerWidth <= 768) {
+    navbarList.style.display = "none";
+    bar1.style.transform = "none";
+    bar2.style.opacity = 1;
+    bar3.style.transform = "none";
+  } else {
+    navbarList.style.display = "flex";
+  }
+});
 
-  // Zkontrolujte, zda má menu třídu 'mobile-menu-open' a podle toho nastavte zobrazení
+mobileMenuIcon.addEventListener("click", function () {
+  navbarList.classList.toggle("mobile-menu-open"); // Prepnutie triedy  'mobile-menu-open'
+
+  // Kontrola, či má menu classu  'mobile-menu-open' a podle toho nastavíme zobrazenie
   if (navbarList.classList.contains("mobile-menu-open")) {
     navbarList.style.display = "block";
     bar1.style.transform = "rotate(-45deg) translate(-5px, 6px)";
@@ -214,7 +316,7 @@ mobileMenuIcon.addEventListener("click", function () {
     bar3.style.transform = "rotate(45deg) translate(-5px, -6px)";
   } else {
     navbarList.style.display = "none";
-    // Pokud je mobilní menu zavřené, vrátit hamburger ikonu
+    // Ak je mobilné menu zatvorené, vrátit hamburger ikonu
     bar1.style.transform = "none";
     bar2.style.opacity = 1;
     bar3.style.transform = "none";
@@ -264,11 +366,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Meni background v reviews
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const backgrounds = [
-    "img/feedback1.png",
-    "img/feedback2.png",
-    "img/feedback4.png",
+    "img/mobile_verzia_recenzia1.png",
+    "img/mobile_verzia_recenzia2.png",
+    "img/mobile_verzia_recenzie3.png",
+    "img/mobile_verzia_recenzia4.png",
   ];
   const backgroundContainer = document.querySelector(".background-image");
   const dots = document.querySelectorAll(".dot");
@@ -317,4 +420,124 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Aktualizovat detekci mobilních zařízení při změně velikosti okna
   window.addEventListener("resize", checkIsMobile);
+}); */
+
+// Meni background v reviews
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileBackgrounds = [
+    "img/mobile_verzia_recenzia1.png",
+    "img/mobile_verzia_recenzia2.png",
+    "img/mobile_verzia_recenzie3.png",
+    "img/mobile_verzia_recenzia4.png",
+  ];
+
+  const desktopBackgrounds = [
+    "img/desktop_new_rew1.png",
+    "img/desktop_new_rew2.png",
+    "img/desktop_new_rew3.png",
+    "img/desktop_new_rew4.png",
+  ];
+
+  const backgroundContainer = document.querySelector(".background-image");
+  const dots = document.querySelectorAll(".dot");
+
+  let currentIndexReview = 0;
+  let isMobile = false;
+
+  function changeBackground(index, isMobile) {
+    const newBackgrounds = isMobile ? mobileBackgrounds : desktopBackgrounds;
+    const newBackground = newBackgrounds[index];
+    backgroundContainer.style.backgroundImage = `url(${newBackground})`;
+  }
+
+  function checkIsMobile() {
+    isMobile = window.innerWidth <= 768; // Zmeniť tento limit podľa potreby
+  }
+
+  // Zmena pozadia na základe kliknutia na kruhy
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", function () {
+      changeBackground(index, isMobile);
+      currentIndexReview = index;
+
+      // Aktualizovat triedu "active" pre kruhy
+      dots.forEach((d) => d.classList.remove("active"));
+      dot.classList.add("active");
+    });
+  });
+
+  // Zmena pozadia iba pre mobilné zariadenia
+  function startBackgroundChangeForMobile() {
+    if (isMobile) {
+      setInterval(() => {
+        currentIndexReview =
+          (currentIndexReview + 1) % mobileBackgrounds.length;
+        changeBackground(currentIndexReview, isMobile);
+
+        // Aktualizovat classu "active" pre kruhy
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[currentIndexReview].classList.add("active");
+      }, 4000); // Zmeniť časový interval podľa potreby
+    }
+  }
+
+  // Zmena pozadia iba pre desktop
+  function startBackgroundChangeForDesktop() {
+    if (!isMobile) {
+      setInterval(() => {
+        currentIndexReview =
+          (currentIndexReview + 1) % desktopBackgrounds.length;
+        changeBackground(currentIndexReview, isMobile);
+
+        // Aktualizovat classu "active" pre kruhy
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[currentIndexReview].classList.add("active");
+      }, 6000); // Zmeniť časový interval podľa potreby
+    }
+  }
+
+  // Spustit kontrolu na detekciu mobilních zařízení až po načtení stránky
+  checkIsMobile();
+  startBackgroundChangeForMobile();
+  startBackgroundChangeForDesktop(); // Spustit zmenu pozadia pre desktop
 });
+
+//cookies
+document.addEventListener("DOMContentLoaded", function () {
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptCookiesButton = document.getElementById("accept-cookies");
+  const declineCookiesButton = document.getElementById("decline-cookies");
+
+  // Skontrolujeme, či užívateľ už prijal súbory cookie
+  const hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
+
+  if (!hasAcceptedCookies) {
+    // Ak užívateľ neprijal súbory cookie, zobrazíme banner
+    cookieBanner.style.display = "block";
+  }
+
+  // Obsluha kliknutia na tlačidlo Súhlasím
+  acceptCookiesButton.addEventListener("click", function () {
+    // Uložíme informáciu o tom, že užívateľ prijal súbory cookie
+    localStorage.setItem("cookiesAccepted", "true");
+    // Skryjeme banner
+    cookieBanner.style.display = "none";
+  });
+
+  declineCookiesButton.addEventListener("click", function () {
+    localStorage.setItem("cookiesAccepted", "declined");
+    deleteAllCookies();
+    cookieBanner.style.display = "none";
+  });
+});
+
+function deleteAllCookies() {
+  const cookies = document.cookie.split(";");
+
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i];
+    const eqPos = cookie.indexOf("=");
+    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+  }
+}
