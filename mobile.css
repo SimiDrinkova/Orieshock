@@ -316,6 +316,10 @@
       margin-left: 20px;
       width: 40%;
     }
+
+    .contact-info p {
+      font-size: 13px;
+    }
   
 
 }
