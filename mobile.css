@@ -321,6 +321,31 @@
       font-size: 13px;
     }
   
+    .text-tt .col {
+      width: 50%;
+    }
+
+    .text-tt {
+      font-size: 14px;
+    }
+
+    .text-eshop .col {
+      width: 50%;
+    }
+
+    .text-eshop a {
+      font-size: 14px;
+    }
+
+    .text-bratislava .col {
+      width: 50%;
+    }
+
+    .text-bratislava {
+      font-size: 14px;
+    }
+
+
 
 }
 

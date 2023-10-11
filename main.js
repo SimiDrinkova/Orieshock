@@ -232,31 +232,51 @@ const buttonEshop = document.querySelector("#btn-eshop");
 const buttonBA = document.querySelector("#btn-bratislava");
 const textBA = document.querySelector(".text-bratislava");
 const textTT = document.querySelector(".text-tt");
-const textEshop = document.querySelector(".text-eshop")
+const textEshop = document.querySelector(".text-eshop");
 
 const backgroundLocality = document.querySelector(".where-to-buy");
 
 buttonTT.addEventListener("click", function () {
-  textTT.style.display = "block"
-  textBA.style.display = "none"
-  textEshop.style.display = "none"
-  backgroundLocality.style.height = "470px";
-})
+  if (window.innerHeight <= 768) {
+    backgroundLocality.style.height = "700px";
+    textTT.style.display = "block";
+    textBA.style.display = "none";
+    textEshop.style.display = "none";
+  } else {
+    textTT.style.display = "block";
+    textBA.style.display = "none";
+    textEshop.style.display = "none";
+    backgroundLocality.style.height = "500px";
+  }
+});
 
 buttonEshop.addEventListener("click", function () {
-  textEshop.style.display = "block"
-  textBA.style.display = "none"
-  textTT.style.display = "none"
-  backgroundLocality.style.height = "320px";
-})
+  if (window.innerHeight <= 768) {
+    textEshop.style.display = "block";
+    textBA.style.display = "none";
+    textTT.style.display = "none";
+    backgroundLocality.style.height = "400px";
+  } else {
+    textEshop.style.display = "block";
+    textBA.style.display = "none";
+    textTT.style.display = "none";
+    backgroundLocality.style.height = "320px";
+  }
+});
 
-buttonBA.addEventListener("click", function (){
-  textBA.style.display = "block"
-  textTT.style.display = "none"
-  textEshop.style.display = "none"
-  backgroundLocality.style.height = "320px";
-})
-
+buttonBA.addEventListener("click", function () {
+  if (window.innerHeight <= 768) {
+    textBA.style.display = "block";
+    textTT.style.display = "none";
+    textEshop.style.display = "none";
+    backgroundLocality.style.height = "400px";
+  } else {
+    textBA.style.display = "block";
+    textTT.style.display = "none";
+    textEshop.style.display = "none";
+    backgroundLocality.style.height = "320px";
+  }
+});
 
 // Otvorenie a zatvorenie hamburger menu
 const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
@@ -335,7 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.style.display = "none";
   });
 });
-
 
 // Meni background v reviews
 document.addEventListener("DOMContentLoaded", function () {
