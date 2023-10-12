@@ -558,7 +558,7 @@ h4 {
 .where-to-buy {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 100%;
   }
 
@@ -858,32 +858,36 @@ h4 {
   width: 20%;
 }
 
-h4 {
+.text-tt h3 {
   font-weight: bold;
+  text-align: left;
 }
 
 .text-bratislava {
   display: none;
   font-size: 18px;
+  text-align: left;
 }
+
 
 .text-tt {
   display: none;
   font-size: 18px;
+  text-align: left;
 }
+
 
 
 .text-eshop {
+    font-size: 18px;
   display: none;
+  text-align: left;
 }
+
 
 .text-eshop a {
   text-decoration: none;
   color: #603913;
-}
-
-.col a {
-    font-size: 18px;
 }
 
 .text-eshop a:hover {

@@ -238,7 +238,7 @@ const backgroundLocality = document.querySelector(".where-to-buy");
 
 buttonTT.addEventListener("click", function () {
   if (window.innerHeight <= 768) {
-    backgroundLocality.style.height = "700px";
+    backgroundLocality.style.height = "750px";
     textTT.style.display = "block";
     textBA.style.display = "none";
     textEshop.style.display = "none";
@@ -255,7 +255,7 @@ buttonEshop.addEventListener("click", function () {
     textEshop.style.display = "block";
     textBA.style.display = "none";
     textTT.style.display = "none";
-    backgroundLocality.style.height = "400px";
+    backgroundLocality.style.height = "450px";
   } else {
     textEshop.style.display = "block";
     textBA.style.display = "none";
@@ -269,7 +269,7 @@ buttonBA.addEventListener("click", function () {
     textBA.style.display = "block";
     textTT.style.display = "none";
     textEshop.style.display = "none";
-    backgroundLocality.style.height = "400px";
+    backgroundLocality.style.height = "450px";
   } else {
     textBA.style.display = "block";
     textTT.style.display = "none";
