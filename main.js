@@ -227,63 +227,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Change background of locality
-// JavaScript pre lightbox
 const buttonTT = document.querySelector("#btn-trnava");
 const buttonEshop = document.querySelector("#btn-eshop");
 const buttonBA = document.querySelector("#btn-bratislava");
+const textBA = document.querySelector(".text-bratislava");
+const textTT = document.querySelector(".text-tt");
+const textEshop = document.querySelector(".text-eshop");
 
 const backgroundLocality = document.querySelector(".where-to-buy");
 
-// Funkcia na otvorenie lightboxu s konkrétnym obrázkom
-function openLightbox(imageSrc) {
-  const lightbox = document.getElementById("lightbox-locality");
-  const lightboxImage = document.getElementById("lightbox-image");
-
-  lightboxImage.src = imageSrc;
-  lightbox.style.display = "block";
-}
-
-// Funkcia na zatvorenie lightboxu
-function closeLightbox() {
-  const lightbox = document.getElementById("lightbox-locality");
-  lightbox.style.display = "none";
-}
-
 buttonTT.addEventListener("click", function () {
   if (window.innerHeight <= 768) {
-    openLightbox("img/buy_mobile_inekraje.png");
+    backgroundLocality.style.height = "750px";
+    textTT.style.display = "block";
+    textBA.style.display = "none";
+    textEshop.style.display = "none";
   } else {
-    openLightbox("img/ostatne_kraje_desktop.png");
+    textTT.style.display = "block";
+    textBA.style.display = "none";
+    textEshop.style.display = "none";
+    backgroundLocality.style.height = "500px";
   }
 });
 
 buttonEshop.addEventListener("click", function () {
   if (window.innerHeight <= 768) {
-    openLightbox("img/buy_mobile_eshop.png");
+    textEshop.style.display = "block";
+    textBA.style.display = "none";
+    textTT.style.display = "none";
+    backgroundLocality.style.height = "450px";
   } else {
-    openLightbox("img/eshop_desktop.png");
+    textEshop.style.display = "block";
+    textBA.style.display = "none";
+    textTT.style.display = "none";
+    backgroundLocality.style.height = "320px";
   }
 });
 
 buttonBA.addEventListener("click", function () {
   if (window.innerHeight <= 768) {
-    openLightbox("img/buy_mobile_BA.png");
+    textBA.style.display = "block";
+    textTT.style.display = "none";
+    textEshop.style.display = "none";
+    backgroundLocality.style.height = "450px";
   } else {
-    openLightbox("img/BA_desktop.png");
-  }
-});
-
-// zatvorenia lightboxu
-const closeLightboxButton = document.getElementById("close-lightbox-locality");
-closeLightboxButton.addEventListener("click", function () {
-  closeLightbox();
-});
-
-// zatvorenia lightboxu kliknutím mimo neho
-window.addEventListener("click", function (event) {
-  const lightbox = document.getElementById("lightbox-locality");
-  if (event.target === lightbox) {
-    closeLightbox();
+    textBA.style.display = "block";
+    textTT.style.display = "none";
+    textEshop.style.display = "none";
+    backgroundLocality.style.height = "320px";
   }
 });
 
@@ -364,63 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.style.display = "none";
   });
 });
-
-// Meni background v reviews
-/*document.addEventListener("DOMContentLoaded", function () {
-  const backgrounds = [
-    "img/mobile_verzia_recenzia1.png",
-    "img/mobile_verzia_recenzia2.png",
-    "img/mobile_verzia_recenzie3.png",
-    "img/mobile_verzia_recenzia4.png",
-  ];
-  const backgroundContainer = document.querySelector(".background-image");
-  const dots = document.querySelectorAll(".dot");
-
-  let currentIndexReview = 0;
-  let isMobile = false;
-
-  function changeBackground(index) {
-    const newBackground = backgrounds[index];
-    backgroundContainer.style.backgroundImage = `url(${newBackground})`;
-  }
-
-  function checkIsMobile() {
-    isMobile = window.innerWidth <= 768; // Zmeniť tento limit podľa potreby
-  }
-
-  // Zmena pozadia na základě kliknutí na kruhy
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", function () {
-      changeBackground(index);
-      currentIndexReview = index;
-
-      // Aktualizovat třídu "active" pro kruhy
-      dots.forEach((d) => d.classList.remove("active"));
-      dot.classList.add("active");
-    });
-  });
-
-  // Zmena pozadia iba pro mobilní zařízení
-  function startBackgroundChangeForMobile() {
-    if (isMobile) {
-      setInterval(() => {
-        currentIndexReview = (currentIndexReview + 1) % backgrounds.length;
-        changeBackground(currentIndexReview);
-
-        // Aktualizovat třídu "active" pro kruhy
-        dots.forEach((dot) => dot.classList.remove("active"));
-        dots[currentIndexReview].classList.add("active");
-      }, 4000); // Zmeniť časový interval podľa potreby
-    }
-  }
-
-  // Spustit kontrolu na detekci mobilních zařízení až po načtení stránky
-  checkIsMobile();
-  startBackgroundChangeForMobile();
-
-  // Aktualizovat detekci mobilních zařízení při změně velikosti okna
-  window.addEventListener("resize", checkIsMobile);
-}); */
 
 // Meni background v reviews
 document.addEventListener("DOMContentLoaded", function () {
