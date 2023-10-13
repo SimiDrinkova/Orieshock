@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const dots = document.querySelectorAll(".dot");
 
   const mobileImages = [
+    "img/banner_kavovy_mobile.png",
     "img/Untitled1_mobile.jpg",
     "img/Untitled2_mobile.jpg",
     "img/Untitled3_mobile.jpg",
@@ -146,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const desktopImages = [
+    "img/banner_kavovy_desktop.png",
     "img/Untitled-10.jpg",
     "img/Untitled-11.jpg",
     "img/Untitled-12.jpg",
