@@ -138,20 +138,14 @@ document.addEventListener("DOMContentLoaded", function () {
     "img/banner_kavovy_mobile.png",
     "img/Untitled1_mobile.jpg",
     "img/Untitled2_mobile.jpg",
-    "img/Untitled3_mobile.jpg",
     "img/Untitled4_mobile.jpg",
     "img/Untitled5_mobile.jpg",
-    "img/Untitled6_mobile.jpg",
-    "img/Untitled7_mobile.jpg",
     "img/Untitled8_mobile.jpg",
   ];
 
   const desktopImages = [
     "img/banner_kavovy_desktop.png",
-    "img/Untitled-10.jpg",
-    "img/Untitled-11.jpg",
     "img/Untitled-12.jpg",
-    "img/Untitled-2.jpg",
     "img/Untitled-4.jpg",
     "img/Untitled-7.jpg",
     "img/Untitled-8.jpg",
