@@ -104,6 +104,92 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// filter for products
+
+const maslo = document.querySelectorAll("#maslo");
+const orechy = document.querySelectorAll("#orechy");
+const cokolada = document.querySelectorAll("#cokolada");
+const ovocie = document.querySelectorAll("#ovocie");
+const granola = document.querySelectorAll("#granola");
+
+document.querySelector("#btn-maslo").addEventListener("click", function () {
+  orechy.forEach(function (orechy) {
+    orechy.style.display = "none";
+  });
+  cokolada.forEach(function (cokolada) {
+    cokolada.style.display = "none";
+  });
+  ovocie.forEach(function (ovocie) {
+    ovocie.style.display = "none";
+  });
+  granola.forEach(function (granola) {
+    granola.style.display = "none";
+  });
+  maslo.forEach(function (maslo) {
+    maslo.style.display = "block";
+  });
+});
+
+document.querySelector("#btn-ovocie").addEventListener("click", function () {
+  orechy.forEach(function (orechy) {
+    orechy.style.display = "block";
+  });
+  maslo.forEach(function (maslo) {
+    maslo.style.display = "none";
+  });
+  granola.forEach(function (granola) {
+    granola.style.display = "none";
+  });
+  cokolada.forEach(function (cokolada) {
+    cokolada.style.display = "block";
+  });
+  ovocie.forEach(function (ovocie) {
+    ovocie.style.display = "block";
+  });
+});
+
+document.querySelector("#btn-granola").addEventListener("click", function () {
+  orechy.forEach(function (orechy) {
+    orechy.style.display = "none";
+  });
+  cokolada.forEach(function (cokolada) {
+    cokolada.style.display = "none";
+  });
+  ovocie.forEach(function (ovocie) {
+    ovocie.style.display = "none";
+  });
+  maslo.forEach(function (maslo) {
+    maslo.style.display = "none";
+  });
+  granola.forEach(function (granola) {
+    granola.style.display = "block";
+  });
+});
+
+// Funkce pro skrytí všech prvků kromě masel
+function showOnlyButters() {
+  orechy.forEach(function (orechy) {
+    orechy.style.display = "none";
+  });
+  cokolada.forEach(function (cokolada) {
+    cokolada.style.display = "none";
+  });
+  ovocie.forEach(function (ovocie) {
+    ovocie.style.display = "none";
+  });
+  granola.forEach(function (granola) {
+    granola.style.display = "none";
+  });
+  maslo.forEach(function (maslo) {
+    maslo.style.display = "block";
+  });
+}
+
+// Událost DOMContentLoaded spustí kód, když je stránka plně načtena
+document.addEventListener("DOMContentLoaded", function () {
+  showOnlyButters(); // Zavolání funkce pro zobrazení pouze masel po načtení stránky
+});
+
 // Roll v history
 const historiaSections = document.querySelectorAll(".roll");
 let currentIndex = 0;
