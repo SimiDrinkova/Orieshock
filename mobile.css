@@ -285,6 +285,10 @@
         margin-bottom: -19px;
       }
 
+      .long-text2 {
+        margin-bottom: -1px;
+    }  
+
       #close-lightbox-locality {
         position: absolute;
         top: 27%;
