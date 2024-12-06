@@ -294,6 +294,7 @@ header {
 }
 /*** Products ***/
 
+
 .products h2{
     text-align: center;
     margin-top: 20px;
@@ -314,6 +315,10 @@ header {
   /*  transition: opacity 0.25s,
         scale 0.35s;
     overflow: hidden;*/
+}
+
+.products .product[data-id="maslo"]:last-child {
+    order: -1;  /* Posledný produkt s data-id="maslo" bude zobrazený ako prvý */
 }
 
 
